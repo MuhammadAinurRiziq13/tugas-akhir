@@ -16,14 +16,12 @@ if(isset($_POST['btn-login'])) {
         $_SESSION['user_session'] = $row['id_user'];
         $_SESSION['level'] = $row['level']; // Tambahkan baris ini untuk menyimpan level pengguna
 
+        echo '<script>alert("Login Sukses");window.location="index.php"</script>'; 
         // Langsung arahkan ke index.php setelah login
-        header("Location: index.php");
+        // header("Location: index.php");
         exit;
     } else {
-        echo "Anda gagal login, silahkan "; ?>
-        <a href="loginForm.html">Login Kembali</a>
-        <?php
-        echo mysqli_error($database->conn);
+        echo '<script>alert("Login Gagal");history.go(-1);</script>';
     }
 }
 ?>
@@ -43,7 +41,6 @@ if(isset($_POST['btn-login'])) {
     <title>simacan</title>
     <link rel="icon" href="assets/img/favicons/favicon.ico">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/" />
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
 
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -151,20 +148,3 @@ if(isset($_POST['btn-login'])) {
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
- <title>Login Page</title>
-</head>
-<body>
- <h2>Login Page</h2>
- <form action="" method="post">
-  <label>Username</label>
-  <input type="text" name="username" required>
-  <label>Password</label>
-  <input type="password" name="password" required>
-  <button type="submit" name="btn-login">Login</button>
- </form>
-</body>
-</html> -->
