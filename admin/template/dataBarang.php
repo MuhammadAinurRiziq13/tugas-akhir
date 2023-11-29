@@ -29,7 +29,7 @@
               <tr>
                 <th>No</th>
                 <th>image</th>
-                <th style="width: 43.5%">Name</th>
+                <th style="width: 41.5%">Name</th>
                 <th>Price</th>
                 <th>Stock</th>
                 <th>Option</th>

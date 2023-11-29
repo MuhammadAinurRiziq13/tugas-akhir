@@ -15,7 +15,7 @@
     <div class="data-barang overflow-auto" style="width: 100%">
         <div class="nav-utama"></div>
         <div class="wrap-barang bg-gray d-flex pt-5 pe-5" style="width: 100%">
-          <div class="wrap-transaksi pt-4" style="width: 52rem">
+          <div class="wrap-transaksi pt-4" style="width: 78%">
             <div class="header py-4">
               <h2 class="fw-bold ps-4 mb-3">Transaksi</h2>
               <div class="wrap-header d-flex justify-content-between align-items-center border-bot mx-4">
@@ -25,14 +25,14 @@
                   <li class="list-item"><a href="#"><i class="fa-solid fa-burger me-1"></i> Snack</a></li>
                   <li class="list-item"><a href="#"><i class="fa-solid fa-wine-glass me-1"></i> Drink</a></li>
                 </ul>
-                <div class="grup pe-2">
+                <div class="grup pe-0">
                   <input type="text" name="search" id="search" placeholder="search..." class="px-3 py-1 rounded-3 search " style="width: 13rem" />
                 </div>
               </div>
             </div>
 
             <div class="card-container px-4 pt-2 d-flex flex-wrap gap-3 pb-4" >
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width: 9rem">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -40,7 +40,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width: 9rem">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -48,7 +48,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width: 9rem">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -56,7 +56,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width: 9rem">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -64,7 +64,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width: 9rem">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -72,7 +72,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width: 9rem">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -80,7 +80,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width: 9rem">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -88,7 +88,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width: 9rem">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -96,7 +96,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width: 9rem">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -104,7 +104,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width: 9rem">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -112,7 +112,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width: 9rem">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -123,105 +123,105 @@
             </div>
           </div>
 
-          <div class="order-menu bg-white p-3 ms-0" style="width: 22%; height: 36rem">
+          <div class="order-menu bg-white p-3 ms-0" style="width: 22%; height: 89%">
             <div class="header-order-menu border-bot">
               <h5 class="fw-bold">Order Menu</h5>
               <p class="date-menu">01/Sep/2023</p>
             </div>
-            <div class="items pt-3" style="height: 390px">
+            <div class="items pt-3" style="height: 24rem">
               <h5 class="fw-bold mb-1">Items</h5>
-              <div class="items-wrap" style="height: 350px">
+              <div class="items-wrap" style="height: 21.5rem">
                 <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 50px" />
+                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
                   <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
                     <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
                     <p class="items-order-harga mb-1">Rp. 10.000</p>
                   </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4">
+                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
                     <button type="button" class="min-items">-</button>
                     <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
                     <button type="button" class="plus-items">+</button>
                   </div>
                 </div>
                 <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 50px" />
+                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
                   <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
                     <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
                     <p class="items-order-harga mb-1">Rp. 10.000</p>
                   </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4">
+                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
                     <button type="button" class="min-items">-</button>
                     <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
                     <button type="button" class="plus-items">+</button>
                   </div>
                 </div>
                 <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 50px" />
+                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
                   <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
                     <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
                     <p class="items-order-harga mb-1">Rp. 10.000</p>
                   </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4">
+                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
                     <button type="button" class="min-items">-</button>
                     <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
                     <button type="button" class="plus-items">+</button>
                   </div>
                 </div>
                 <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 50px" />
+                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
                   <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
                     <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
                     <p class="items-order-harga mb-1">Rp. 10.000</p>
                   </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4">
+                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
                     <button type="button" class="min-items">-</button>
                     <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
                     <button type="button" class="plus-items">+</button>
                   </div>
                 </div>
                 <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 50px" />
+                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
                   <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
                     <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
                     <p class="items-order-harga mb-1">Rp. 10.000</p>
                   </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4">
+                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
                     <button type="button" class="min-items">-</button>
                     <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
                     <button type="button" class="plus-items">+</button>
                   </div>
                 </div>
                 <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 50px" />
+                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
                   <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
                     <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
                     <p class="items-order-harga mb-1">Rp. 10.000</p>
                   </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4">
+                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
                     <button type="button" class="min-items">-</button>
                     <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
                     <button type="button" class="plus-items">+</button>
                   </div>
                 </div>
                 <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 50px" />
+                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
                   <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
                     <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
                     <p class="items-order-harga mb-1">Rp. 10.000</p>
                   </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4">
+                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
                     <button type="button" class="min-items">-</button>
                     <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
                     <button type="button" class="plus-items">+</button>
                   </div>
                 </div>
                 <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 50px" />
+                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
                   <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
                     <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
                     <p class="items-order-harga mb-1">Rp. 10.000</p>
                   </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4">
+                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
                     <button type="button" class="min-items">-</button>
                     <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
                     <button type="button" class="plus-items">+</button>
