@@ -45,6 +45,9 @@
 .add-barang:hover {
   background-color: #2d8d00;
 }
+.color-black {
+  color: black;
+}
 input.search,
 select.pilih-bulan,
 select.pilih-tahun {

@@ -13,10 +13,10 @@
             <h2 class="fw-bold mb-3">Product</h2>
             <div class="wrap-header d-flex justify-content-between align-items-center">
               <ul class="list-grup gap-3 ps-0">
-                <li class="list-item"><i class="fa-solid fa-border-all me-1"></i> All Items</li>
-                <li class="list-item"><i class="fa-solid fa-utensils me-1"></i> Food</li>
-                <li class="list-item"><i class="fa-solid fa-burger me-1"></i> Snack</li>
-                <li class="list-item"><i class="fa-solid fa-wine-glass me-1"></i> Drink</li>
+                <li class="list-item"><a href="#" style="color:black"><i class="fa-solid fa-border-all me-1"></i> All Items</a></li>
+                <li class="list-item"><a href="#" style="color:black"><i class="fa-solid fa-utensils me-1"></i> Food</a></li>
+                <li class="list-item"><a href="#" style="color:black"><i class="fa-solid fa-burger me-1"></i> Snack</a></li>
+                <li class="list-item"><a href="#" style="color:black"><i class="fa-solid fa-wine-glass me-1"></i> Drink</a></li>
               </ul>
               <div class="grup pe-0">
                 <button type="button" class="me-3 rounded-3 px-3 py-1 add-barang" data-bs-toggle="modal" data-bs-target="#addModal">Add Product</button>
