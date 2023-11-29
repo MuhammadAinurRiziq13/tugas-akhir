@@ -60,7 +60,7 @@
                 <div class="card rounded-4">
                   <div class="card-body d-flex justify-content-between">
                     <div>
-                      <h5 class="card-title">Total Pemasukan AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h5>
+                      <h5 class="card-title">Total Pemasukan</h5>
                       <p class="card-text fw-bold my-4 fs-3">Rp. 20.000.000</p>
                     </div>
                     <a href="index.php?page=jabatan" class="btn bg-dongker text-white" style="height: 35px; width: 40px"
