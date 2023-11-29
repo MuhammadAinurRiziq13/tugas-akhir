@@ -27,7 +27,7 @@
                 <div class="card rounded-4">
                   <div class="card-body d-flex justify-content-between">
                     <div>
-                      <h5 class="card-title">Jenis Barang</h5>
+                      <h5 class="card-title">Jenis kwkwkkw</h5>
                       <p class="card-text fw-bold my-4 fs-3">23</p>
                     </div>
                     <a href="index.php?page=jabatan" class="btn bg-dongker text-white" style="height: 35px; width: 40px"
