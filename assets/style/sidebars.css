@@ -34,6 +34,9 @@
 .list-item {
   font-weight: bold;
 }
+.list-item a {
+  color: black !important;
+}
 .grup {
   margin-bottom: 1.5rem;
 }
