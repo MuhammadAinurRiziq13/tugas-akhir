@@ -14,7 +14,7 @@
     ?>
     <div class="data-barang overflow-auto" style="width: 100%">
         <div class="nav-utama"></div>
-        <div class="wrap-barang bg-gray d-flex pt-5 pe-5 me-5" style="width: 80%">
+        <div class="wrap-barang bg-gray d-flex pt-5 pe-5" style="width: 100%">
           <div class="wrap-transaksi pt-4" style="width: 52rem">
             <div class="header py-4">
               <h2 class="fw-bold ps-4 mb-3">Transaksi</h2>
