@@ -124,6 +124,28 @@
                 <td>30</td>
                 <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button> <button type="button" class="hapus" data-bs-toggle="modal">Delete</button></td>
               </tr>
+              <!-- 
+              <?php
+                $query = "SELECT nama_barang, harga_barang, stok_barang, gambar_barang  FROM barang order by nama_barang";
+                $result = mysqli_query($koneksi, $query);
+                $itemKe = 1;
+                while ($row = mysqli_fetch_assoc($result)) {
+              ?>
+                <tr>
+                  <td><?= $itemKe ?></td>
+                  <td><img src="<?php $row['gambar_barang'] ?>" alt="" style="width: 4rem" class="rounded-3" /></td>
+                  <td><?= $row['nama_barang'] ?></td>
+                  <td><?= $row['harga_barang'] ?></td>
+                  <td><?= $row['stok_barang'] ?></td>
+                  <td>
+                    <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button> 
+                    <button type="button" class="hapus" data-bs-toggle="modal">Delete</button>
+                  </td>
+                </tr>
+              <?php 
+              } 
+              ?> 
+              -->
             </tbody>
           </table>
         </div>
