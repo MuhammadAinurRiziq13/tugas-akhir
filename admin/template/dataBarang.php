@@ -181,7 +181,7 @@
                 </div>
                 <div class="mb-1">
                   <label for="foto-barang" class="col-form-label">Foto</label>
-                  <input type="file" class="form-control" id="foto-barang" accept="image/*" />
+                  <input type="text" class="form-control" id="foto-barang" accept="image/*" />
                 </div>
               </form>
             </div>
