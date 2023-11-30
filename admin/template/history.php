@@ -13,7 +13,7 @@
             <h2 class="fw-bold">History Penjualan</h2>
             <div class="grup pe-0 mt-3">
               <select id="bulan" name="bulan" class="px-3 py-1 rounded-3 pilih-bulan me-2" style="width: 10rem">
-                <option value="1">Januari</option>
+                <option value="1">Januari11111111111</option>
                 <option value="2">Februari</option>
                 <option value="3">Maret</option>
                 <option value="4">April</option>
