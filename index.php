@@ -2,7 +2,7 @@
 session_start();
 require_once 'config.php';
 
-$database = new Database();
+// $database = new Database();
 
 if(!empty($_SESSION['level'])){
 
