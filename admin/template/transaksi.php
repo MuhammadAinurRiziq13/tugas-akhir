@@ -123,14 +123,14 @@
             </div>
           </div>
 
-          <div class="order-menu bg-white p-3 ms-0" style="width: 22%; height: 89%">
+          <div class="order-menu bg-white p-3 ms-0" style="width: 22%; height: 88%">
             <div class="header-order-menu border-bot">
               <h5 class="fw-bold">Order Menu</h5>
               <p class="date-menu">01/Sep/2023</p>
             </div>
-            <div class="items pt-3" style="height: 24rem">
+            <div class="items pt-3" style="height: 72%">
               <h5 class="fw-bold mb-1">Items</h5>
-              <div class="items-wrap" style="height: 21.5rem">
+              <div class="items-wrap mb-0" style="height: 20rem">
                 <div class="list-items-order d-flex border-bot py-2">
                   <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
                   <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
@@ -229,7 +229,7 @@
                 </div>
               </div>
             </div>
-            <div class="bayar-container border-top py-3 px-1 mt-2">
+            <div class="bayar-container border-top py-2 px-1 mt-2">
               <div class="bayar-items d-flex justify-content-between bg-dongker py-2 px-2 rounded-4 align-items-center">
                 <div class="bayar-teks ms-2">
                   <p class="mb-1 jml-item">4 items</p>
