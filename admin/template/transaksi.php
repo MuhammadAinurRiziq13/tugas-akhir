@@ -32,7 +32,7 @@
             </div>
 
             <div class="card-container px-4 pt-2 d-flex flex-wrap gap-3 pb-4" >
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -40,7 +40,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -48,7 +48,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -56,7 +56,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -64,7 +64,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -72,7 +72,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -80,7 +80,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -88,7 +88,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -96,7 +96,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -104,7 +104,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
@@ -112,7 +112,7 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18.2%">
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
