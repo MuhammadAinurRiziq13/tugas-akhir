@@ -13,7 +13,7 @@
           <main class="col-md-9 col-lg-10 px-md-4 mx-4 mt-4" style="width: 100%">
             <div class="d-flex justify-content-between flex-wrap align-items-center pt-4 pb-2 me-5 mb-4 border-bot">
                 <?php
-                    require_once 'config.php';
+                    require_once 'config/config.php';
                     $database = new Database();
                     if ($_SESSION['level'] == 1) {
                         echo '<h1 class="h1 fw-bold">Welcome Pemilik</h1>';

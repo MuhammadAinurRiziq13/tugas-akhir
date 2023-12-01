@@ -20,7 +20,7 @@
             </a>
           </li>
           <?php
-            require_once 'config.php';
+            require_once 'config/config.php';
             $database = new Database();
             if ($_SESSION['level'] == 2) {
               echo '

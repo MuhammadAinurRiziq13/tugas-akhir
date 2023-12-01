@@ -36,14 +36,6 @@
               </tr>
             </thead>
             <tbody>
-<!--               <tr>
-                <td>01</td>
-                <td><img src="assets/image/nasi_goreng.jpeg" alt="" style="width: 4rem" class="rounded-3" /></td>
-                <td>Nasi Goreng</td>
-                <td>Rp. 10.000</td>
-                <td>30</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button> <button type="button" class="hapus" data-bs-toggle="modal">Delete</button></td>
-              </tr>
               <tr>
                 <td>01</td>
                 <td><img src="assets/image/nasi_goreng.jpeg" alt="" style="width: 4rem" class="rounded-3" /></td>
@@ -123,28 +115,15 @@
                 <td>Rp. 10.000</td>
                 <td>30</td>
                 <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button> <button type="button" class="hapus" data-bs-toggle="modal">Delete</button></td>
-              </tr> -->
-              <?php
-                $itemKe = 1;
-                $query = "SELECT nama_barang, harga_barang, stok_barang, gambar FROM barang order by nama_barang";
-                $result = $koneksi->executeQuery($query);
-                while ($row = mysqli_fetch_assoc($result)) {
-              ?>
-                <tr>
-                  <td><?= $itemKe++ ?></td>
-                  <!-- <td><img src="<?php $row['gambar'] ?>" alt="" style="width: 4rem" class="rounded-3" /></td> -->
-                  <td><img src="assets/image/nasi_goreng.jpeg" alt="" style="width: 4rem" class="rounded-3" /></td>
-                  <td><?= $row['nama_barang'] ?></td>
-                  <td><?= $row['harga_barang'] ?></td>
-                  <td><?= $row['stok_barang'] ?></td>
-                  <td>
-                    <button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button> 
-                    <button type="button" class="hapus" data-bs-toggle="modal">Delete</button>
-                  </td>
-                </tr>
-              <?php 
-              } 
-              ?>
+              </tr>
+              <tr>
+                <td>01</td>
+                <td><img src="assets/image/nasi_goreng.jpeg" alt="" style="width: 4rem" class="rounded-3" /></td>
+                <td>Nasi Goreng</td>
+                <td>Rp. 10.000</td>
+                <td>30</td>
+                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button> <button type="button" class="hapus" data-bs-toggle="modal">Delete</button></td>
+              </tr>
             </tbody>
           </table>
         </div>

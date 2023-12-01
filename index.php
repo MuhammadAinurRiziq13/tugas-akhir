@@ -1,15 +1,15 @@
 <?php
 session_start();
-require_once 'config.php';
+require_once 'config/config.php';
 
 // $database = new Database();
 
 if(!empty($_SESSION['level'])){
 
     if(!empty($_GET['page'])){
-        include 'admin/template/'.$_GET['page']. '.php';
+        include 'template/'.$_GET['page']. '.php';
     }else{
-        include 'admin/template/dashboard.php';
+        include 'template/dashboard.php';
     }
 
     // if ($_SESSION['level'] == 1) {
