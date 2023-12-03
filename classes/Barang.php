@@ -65,6 +65,33 @@ class Barang {
 
         return $stmt->execute();
     }
+
+    public function searchDataBarang($searchTerm) {
+        // Saring data barang berdasarkan nama_barang
+        $sql = "SELECT * FROM barang WHERE nama_barang LIKE ?";
+        $stmt = $this->conn->prepare($sql);
+    
+        // Tambahkan tanda persen (%) pada awal dan akhir search term untuk mencari nama_barang yang mengandung
+        $searchTerm = "%$searchTerm%";
+        $stmt->bind_param("s", $searchTerm);
+    
+        // Eksekusi query
+        $stmt->execute();
+    
+        // Ambil hasil
+        $result = $stmt->get_result();
+    
+        // Cek jika ada data
+        if ($result->num_rows > 0) {
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            return $data;
+        } else {
+            return array();
+        }
+    }
 }
 
 ?>

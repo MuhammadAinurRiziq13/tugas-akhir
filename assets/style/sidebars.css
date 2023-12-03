@@ -48,6 +48,15 @@
 .add-barang:hover {
   background-color: #2d8d00;
 }
+.cari-barang {
+  border: none;
+  background-color: #003049;
+  transition: 0.2s;
+  color: white;
+}
+.cari-barang:hover {
+  background-color: #002235;
+}
 .color-black {
   color: black;
 }
