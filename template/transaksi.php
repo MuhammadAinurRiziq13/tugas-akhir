@@ -5,9 +5,6 @@
       //   echo "<script>alert('ini bukan hak anda');window.location.href = 'index.php';</script>";
       // }
     ?>
-    <?php
-        include "header.php";
-    ?>
     <main class="d-flex flex-nowrap">
     <?php
         include "sidebar.php";
@@ -329,7 +326,3 @@
         </div>
       </div>
     </main>
-
-    <?php
-        include "footer.php";
-    ?>

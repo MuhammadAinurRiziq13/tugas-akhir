@@ -1,6 +1,3 @@
-    <?php
-        include "header.php";
-    ?>
     <main class="d-flex flex-nowrap">
     <?php
         include "sidebar.php";
@@ -196,6 +193,3 @@
         </div>
       </div>
     </main>
-    <?php
-        include "footer.php";
-    ?>

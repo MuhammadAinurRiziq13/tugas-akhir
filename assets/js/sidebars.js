@@ -63,4 +63,10 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = event.currentTarget.getAttribute("href");
     });
   });
+
+    // Show the modal on page load
+    var editModal = document.getElementById('editModal');
+    if (editModal) {
+      editModal.style.display = 'block';
+    }
 });

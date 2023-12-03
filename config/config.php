@@ -17,12 +17,12 @@ class Database {
       die("Koneksi database gagal: " . mysqli_connect_error());
     }
   }
-  // public function executeQuery($query) {
-  //   // $result = mysqli_query($this->conn, $query);
-  //   $result = $this->conn->query($query);
-  //   return $result;
-  // }
 }
 
+// public function executeQuery($query) {
+//   // $result = mysqli_query($this->conn, $query);
+//   $result = $this->conn->query($query);
+//   return $result;
+// }
 // $koneksi = new Database();
 ?>

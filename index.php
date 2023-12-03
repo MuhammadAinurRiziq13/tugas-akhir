@@ -5,6 +5,7 @@ require_once 'config/config.php';
 // $database = new Database();
 
 if(!empty($_SESSION['level'])){
+    include 'template/header.php';
 
     if(!empty($_GET['page'])){
         include 'template/'.$_GET['page']. '.php';
@@ -12,13 +13,7 @@ if(!empty($_SESSION['level'])){
         include 'template/dashboard.php';
     }
 
-    // if ($_SESSION['level'] == 1) {
-    //     include 'owner.php';
-    // } elseif ($_SESSION['level'] == 2) {
-    //     include 'admin.php';
-    // }
-
-    // include 'admin/template/footer.php';
+    include 'template/footer.php';
 } else {
     header("Location: login.php");
 }
