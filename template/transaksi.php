@@ -1,10 +1,15 @@
-    <?php
-      // require_once 'config.php';
-      // $database1 = new Database();
-      // if ($_SESSION['level'] == 1) {
-      //   echo "<script>alert('ini bukan hak anda');window.location.href = 'index.php';</script>";
-      // }
-    ?>
+<?php
+    require_once 'config/config.php'; // Pastikan file Database.php sudah di-include
+    require_once 'classes/Barang.php'; // Pastikan file Item.php sudah di-include
+
+    // Membuat instance dari class Database
+    $database = new Database();
+    $conn = $database->conn;
+
+    // Membuat instance dari class Item
+    $barang = new Barang($conn);
+?>
+
     <main class="d-flex flex-nowrap">
     <?php
         include "sidebar.php";
@@ -29,6 +34,7 @@
             </div>
 
             <div class="card-container px-4 pt-2 d-flex flex-wrap gap-3 pb-4" >
+              <!-- Sebagai sample jika database barang kosong -->
               <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
@@ -37,86 +43,30 @@
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
               </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-                <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
-                <div class="kartu-body pt-3 d-flex align-items-center flex-column">
-                  <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
-                  <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
-                  <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
-                </div>
-              </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-                <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
-                <div class="kartu-body pt-3 d-flex align-items-center flex-column">
-                  <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
-                  <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
-                  <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
-                </div>
-              </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-                <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
-                <div class="kartu-body pt-3 d-flex align-items-center flex-column">
-                  <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
-                  <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
-                  <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
-                </div>
-              </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-                <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
-                <div class="kartu-body pt-3 d-flex align-items-center flex-column">
-                  <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
-                  <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
-                  <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
-                </div>
-              </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-                <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
-                <div class="kartu-body pt-3 d-flex align-items-center flex-column">
-                  <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
-                  <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
-                  <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
-                </div>
-              </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-                <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
-                <div class="kartu-body pt-3 d-flex align-items-center flex-column">
-                  <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
-                  <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
-                  <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
-                </div>
-              </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-                <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
-                <div class="kartu-body pt-3 d-flex align-items-center flex-column">
-                  <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
-                  <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
-                  <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
-                </div>
-              </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-                <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
-                <div class="kartu-body pt-3 d-flex align-items-center flex-column">
-                  <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
-                  <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
-                  <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
-                </div>
-              </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-                <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
-                <div class="kartu-body pt-3 d-flex align-items-center flex-column">
-                  <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
-                  <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
-                  <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
-                </div>
-              </div>
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-                <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
-                <div class="kartu-body pt-3 d-flex align-items-center flex-column">
-                  <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
-                  <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
-                  <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
-                </div>
-              </div>
+                
+              <!-- Kode PHP -->
+              <?php
+                // Memeriksa apakah ada data pencarian
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
+                  // Jika ada data pencarian, panggil fungsi untuk mendapatkan data barang berdasarkan pencarian
+                  $searchTerm = $_POST['search'];
+                  $dataBarang = $barang->searchDataBarang($searchTerm);
+                } else {
+                  // Jika tidak ada data pencarian, panggil fungsi untuk mendapatkan semua data barang
+                  $dataBarang = $barang->getDataBarang();
+                }
+
+                foreach ($dataBarang as $item) {
+                  echo '<div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">';          
+                    echo '<img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />';
+                    echo '<div class="kartu-body pt-3 d-flex align-items-center flex-column">';
+                      echo '<h5 class="kartu-title h6 fw-bold">'  . $item['nama_barang'] . '</h5>';
+                      echo '<p class="kartu-text mb-2 fs-6">' . number_format($item['harga_barang']) . '</p>';
+                      echo '<a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>';
+                    echo '</div>
+                  </div>';                
+                }    
+              ?>
             </div>
           </div>
 
