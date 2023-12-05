@@ -201,11 +201,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
         </div>
       </div>
 
-      <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="editModal">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Barang</h1>
+              <h1 class="modal-title fs-5">Edit Barang</h1>
             </div>
             <div class="modal-body">
                 <form action='update.php' method='post' enctype="multipart/form-data">

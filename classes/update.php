@@ -19,8 +19,6 @@
         $stok_barang = $_POST['stok_barang'];
         $gambar_barang = '';
 
-        // Lakukan validasi data jika diperlukan
-
         // Cek apakah ada file yang di-upload
         if (isset($_FILES['foto_barang']) && $_FILES['foto_barang']['error'] == 0) {
             // Simpan foto ke direktori tertentu (misalnya 'uploads/')
@@ -34,6 +32,10 @@
                 echo "File upload failed.";
                 exit();
             }
+        } else {
+            // If no new photo uploaded, retain the existing photo
+            $existingData = $barang->getBarangById($id_barang);
+            $gambar_barang = $existingData['gambar'];
         }
 
         // Panggil method untuk memperbarui barang
