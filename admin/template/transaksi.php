@@ -36,24 +36,16 @@
             </div>
 
             <div class="card-container px-4 pt-2 d-flex flex-wrap gap-3 pb-4" >
-<<<<<<< HEAD:admin/template/transaksi.php
               <!-- Sebagai sample jika database barang kosong -->
               <!-- <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-=======
-              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
->>>>>>> 1e480ae5e9dd52a50d8f31a858aa83a58c2e5a98:template/transaksi.php
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
                   <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
-<<<<<<< HEAD:admin/template/transaksi.php
               </div> -->
                 
-=======
-              </div>
->>>>>>> 1e480ae5e9dd52a50d8f31a858aa83a58c2e5a98:template/transaksi.php
               <!-- Kode PHP -->
               <?php
                 // Memeriksa apakah ada data pencarian
