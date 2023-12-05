@@ -9,14 +9,16 @@
     // Membuat instance dari class Item
     $barang = new Barang($conn);
 ?>
-
+<?php
+  require "DetailTransaksi.php";
+?>
     <main class="d-flex flex-nowrap">
     <?php
         include "sidebar.php";
     ?>
     <div class="data-barang overflow-auto" style="width: 100%">
         <div class="nav-utama"></div>
-        <div class="wrap-barang bg-gray d-flex pt-5 pe-5" style="width: 100%">
+        <div id="transaksi" class="wrap-barang bg-gray d-flex pt-5 pe-5" style="width: 100%">
           <div class="wrap-transaksi pt-4" style="width: 78%">
             <div class="header py-4">
               <h2 class="fw-bold ps-4 mb-3">Transaksi</h2>
@@ -34,16 +36,24 @@
             </div>
 
             <div class="card-container px-4 pt-2 d-flex flex-wrap gap-3 pb-4" >
+<<<<<<< HEAD:admin/template/transaksi.php
               <!-- Sebagai sample jika database barang kosong -->
               <!-- <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
+=======
+              <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
+>>>>>>> 1e480ae5e9dd52a50d8f31a858aa83a58c2e5a98:template/transaksi.php
                 <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
                 <div class="kartu-body pt-3 d-flex align-items-center flex-column">
                   <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
                   <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
                   <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
                 </div>
+<<<<<<< HEAD:admin/template/transaksi.php
               </div> -->
                 
+=======
+              </div>
+>>>>>>> 1e480ae5e9dd52a50d8f31a858aa83a58c2e5a98:template/transaksi.php
               <!-- Kode PHP -->
               <?php
                 // Memeriksa apakah ada data pencarian
@@ -56,6 +66,7 @@
                   $dataBarang = $barang->getDataBarang();
                 }
 
+                $no = 1;
                 foreach ($dataBarang as $item) {
                   echo '<div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">';          
                     echo '<img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />';
@@ -69,7 +80,7 @@
               ?>
             </div>
           </div>
-
+          <!-- Baris di bawah adalah tempat di mana orderMenu.php akan diletakkan -->
           <div class="order-menu bg-white p-3 ms-0" style="width: 22%; height: 88%">
             <div class="header-order-menu border-bot">
               <h5 class="fw-bold">Order Menu</h5>
@@ -77,104 +88,20 @@
             </div>
             <div class="items pt-3" style="height: 72%">
               <h5 class="fw-bold mb-1">Items</h5>
-              <div class="items-wrap mb-0" style="height: 20rem">
-                <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
-                  <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
-                    <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
-                    <p class="items-order-harga mb-1">Rp. 10.000</p>
-                  </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
-                    <button type="button" class="min-items">-</button>
-                    <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
-                    <button type="button" class="plus-items">+</button>
-                  </div>
-                </div>
-                <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
-                  <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
-                    <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
-                    <p class="items-order-harga mb-1">Rp. 10.000</p>
-                  </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
-                    <button type="button" class="min-items">-</button>
-                    <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
-                    <button type="button" class="plus-items">+</button>
+                <div class="items-wrap mb-0" style="height: 20rem">
+                  <div class="list-items-order d-flex border-bot py-2">
+                    <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
+                    <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
+                      <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
+                      <p class="items-order-harga mb-1">Rp. 10.000</p>
+                    </div>
+                    <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
+                      <button type="button" class="min-items">-</button>
+                      <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
+                      <button type="button" class="plus-items">+</button>
+                    </div>
                   </div>
                 </div>
-                <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
-                  <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
-                    <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
-                    <p class="items-order-harga mb-1">Rp. 10.000</p>
-                  </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
-                    <button type="button" class="min-items">-</button>
-                    <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
-                    <button type="button" class="plus-items">+</button>
-                  </div>
-                </div>
-                <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
-                  <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
-                    <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
-                    <p class="items-order-harga mb-1">Rp. 10.000</p>
-                  </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
-                    <button type="button" class="min-items">-</button>
-                    <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
-                    <button type="button" class="plus-items">+</button>
-                  </div>
-                </div>
-                <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
-                  <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
-                    <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
-                    <p class="items-order-harga mb-1">Rp. 10.000</p>
-                  </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
-                    <button type="button" class="min-items">-</button>
-                    <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
-                    <button type="button" class="plus-items">+</button>
-                  </div>
-                </div>
-                <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
-                  <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
-                    <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
-                    <p class="items-order-harga mb-1">Rp. 10.000</p>
-                  </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
-                    <button type="button" class="min-items">-</button>
-                    <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
-                    <button type="button" class="plus-items">+</button>
-                  </div>
-                </div>
-                <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
-                  <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
-                    <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
-                    <p class="items-order-harga mb-1">Rp. 10.000</p>
-                  </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
-                    <button type="button" class="min-items">-</button>
-                    <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
-                    <button type="button" class="plus-items">+</button>
-                  </div>
-                </div>
-                <div class="list-items-order d-flex border-bot py-2">
-                  <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
-                  <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
-                    <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
-                    <p class="items-order-harga mb-1">Rp. 10.000</p>
-                  </div>
-                  <div class="items-kuantiti d-flex align-items-end gap-1 ms-4 pe-2">
-                    <button type="button" class="min-items">-</button>
-                    <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
-                    <button type="button" class="plus-items">+</button>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="bayar-container border-top py-2 px-1 mt-2">
               <div class="bayar-items d-flex justify-content-between bg-dongker py-2 px-2 rounded-4 align-items-center">
