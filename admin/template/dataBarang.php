@@ -70,8 +70,8 @@
                   echo "<td>Rp. " . number_format($item['harga_barang']) . "</td>";
                   echo "<td>" . $item['stok_barang'] . "</td>";
                   echo "<td>
-                          <a href='admin/fungsi/edit.php?action=edit&id=" . $item['id_barang'] . "' class='edit'>Edit</a>
-                          <a href='admin/fungsi/delete.php?action=delete&id=" . $item['id_barang'] . "' class='hapus' onclick='return confirm(\"Hapus Data Barang ?\");'>Delete</a>
+                          <a href='admin/fungsi/editBarang.php?action=edit&id=" . $item['id_barang'] . "' class='edit'>Edit</a>
+                          <a href='admin/fungsi/deleteBarang.php?action=delete&id=" . $item['id_barang'] . "' class='hapus' onclick='return confirm(\"Hapus Data Barang ?\");'>Delete</a>
                       </td>";
                   echo "</tr>";                  
                 }             
@@ -89,7 +89,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form action="admin/fungsi/tambah.php" method="post" enctype="multipart/form-data" >
+              <form action="admin/fungsi/tambahBarang.php" method="post" enctype="multipart/form-data" >
                 <div class="mb-1">
                   <label for="nama-barang" class="col-form-label">Nama Barang</label>
                   <input type="text" class="form-control" id="nama-barang" name="nama-barang" />
