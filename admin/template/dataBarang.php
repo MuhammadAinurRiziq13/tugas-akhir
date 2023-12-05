@@ -31,7 +31,6 @@
                 <button type="button" class="me-3 rounded-3 px-3 py-1 add-barang" data-bs-toggle="modal" data-bs-target="#addModal">Add Product</button>
                 <form action="" method="post">
                     <input type="text" name="search" id="search" placeholder="Search..." class="px-3 py-1 rounded-3 search" style="width: 13rem" />
-                    <!-- <input type="submit" value="Cari" class="me-3 rounded-3 px-3 py-1 cari-barang"> -->
                     <button type="submit" class="me-3 rounded-3 px-3 py-1 cari-barang">
                       <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -71,8 +70,8 @@
                   echo "<td>Rp. " . number_format($item['harga_barang']) . "</td>";
                   echo "<td>" . $item['stok_barang'] . "</td>";
                   echo "<td>
-                          <a href='classes/edit.php?action=edit&id=" . $item['id_barang'] . "' class='edit'>Edit</a>
-                          <a href='classes/delete.php?action=delete&id=" . $item['id_barang'] . "' class='hapus' onclick='return confirm(\"Hapus Data Jabatan ?\");'>Delete</a>
+                          <a href='admin/fungsi/edit.php?action=edit&id=" . $item['id_barang'] . "' class='edit'>Edit</a>
+                          <a href='admin/fungsi/delete.php?action=delete&id=" . $item['id_barang'] . "' class='hapus' onclick='return confirm(\"Hapus Data Barang ?\");'>Delete</a>
                       </td>";
                   echo "</tr>";                  
                 }             
@@ -90,7 +89,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form action="classes/tambah.php" method="post" enctype="multipart/form-data" >
+              <form action="admin/fungsi/tambah.php" method="post" enctype="multipart/form-data" >
                 <div class="mb-1">
                   <label for="nama-barang" class="col-form-label">Nama Barang</label>
                   <input type="text" class="form-control" id="nama-barang" name="nama-barang" />

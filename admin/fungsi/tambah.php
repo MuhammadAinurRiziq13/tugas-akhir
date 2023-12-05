@@ -1,6 +1,6 @@
 <?php
-    require_once '../config/config.php'; // Pastikan file Database.php sudah di-include
-    require_once 'Barang.php'; // Pastikan file Item.php sudah di-include
+    require_once '../../config/config.php'; // Pastikan file Database.php sudah di-include
+    require_once '../../classes/Barang.php'; // Pastikan file Item.php sudah di-include
 
     // Membuat instance dari class Database
     $database = new Database();
@@ -28,7 +28,7 @@
         // Panggil method untuk menambahkan barang
         if ($barang->tambahBarang($namaBarang, $kategori, $hargaJual, $stock, $fotoBarang)) {
             // Redirect atau tampilkan pesan berhasil
-            header("Location: ../index.php?page=dataBarang");
+            header("Location: ../../index.php?page=dataBarang");
             exit();
         } else {
             // Tampilkan pesan gagal

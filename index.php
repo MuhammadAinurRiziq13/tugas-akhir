@@ -5,15 +5,15 @@ require_once 'config/config.php';
 // $database = new Database();
 
 if(!empty($_SESSION['level'])){
-    include 'template/header.php';
+    include 'admin/template/header.php';
 
     if(!empty($_GET['page'])){
-        include 'template/'.$_GET['page']. '.php';
+        include 'admin/template/'.$_GET['page']. '.php';
     }else{
-        include 'template/dashboard.php';
+        include 'admin/template/dashboard.php';
     }
 
-    include 'template/footer.php';
+    include 'admin/template/footer.php';
 } else {
     header("Location: login.php");
 }

@@ -1,7 +1,7 @@
 <?php
     session_start();
-    require_once '../config/config.php'; 
-    require_once 'Barang.php'; 
+    require_once '../../config/config.php'; 
+    require_once '../../classes/Barang.php'; 
 
     $database = new Database();
     $conn = $database->conn;
@@ -22,35 +22,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
 }    
 ?>
 
-<!-- <form action='update.php' method='post'>
-    <input type='hidden' name='id_barang' value="<?= $data_barang['id_barang'] ?>">
-    <div class="mb-1">
-        <label for="nama_barang" class="col-form-label">Nama Barang</label>
-        <input type='text' class="form-control" id="nama_barang" name='nama_barang' value='<?= $data_barang['nama_barang'] ?>'>
-    </div>
-    <div class="mb-1">
-        <label for="editKategori" class="col-form-label">Kategori</label>
-        <select id="editKategori" name="id_kategori" class="px-2 py-1 rounded-2" style="width: 29rem">
-            <option value="1" <?= $data_barang['id_kategori'] == 1 ? 'selected' : '' ?>>Makanan</option>
-            <option value="2" <?= $data_barang['id_kategori'] == 2 ? 'selected' : '' ?>>Minuman</option>
-            <option value="3" <?= $data_barang['id_kategori'] == 3 ? 'selected' : '' ?>>Snack</option>
-        </select>
-    </div>
-    <div class="mb-1">
-        <label for="harga_barang" class="col-form-label">Harga Barang</label>
-        <input type='text' class="form-control" id="harga_barang" name='harga_barang' value='<?= $data_barang['harga_barang'] ?>'>
-    </div>
-    <div class="mb-1">
-        <label for="stok_barang" class="col-form-label">Stok Barang</label>
-        <input type='text' class="form-control" id="stok_barang" name='stok_barang' value='<?= $data_barang['stok_barang'] ?>'>
-    </div>
-    <div class="mb-1">
-        <label for="gambar" class="col-form-label">Gambar</label>
-        <input type='text' class="form-control" id="gambar" name='gambar' value='<?= $data_barang['gambar'] ?>'>
-    </div>
-    <input type='submit' name='update' value='Update'>
-</form> -->
-
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="auto">
   <head>
@@ -70,9 +41,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
-    <link href="../assets/style/sidebars.css" rel="stylesheet" />
+    <link href="../../assets/style/sidebars.css" rel="stylesheet" />
   </head>   
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -85,7 +56,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
     <main class="d-flex flex-nowrap">
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-dongker menu" style="width: 240px; height: 100vh">
             <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none ms-4">
-            <img src="../assets/image/logo-dua.png" alt="logo" class="img-fluid ms-2" style="height: 40px" />
+            <img src="../../assets/image/logo-dua.png" alt="logo" class="img-fluid ms-2" style="height: 40px" />
             <!-- <span class="fs-5">KANTIN</span> -->
             </a>
             <hr class="text-white" />
@@ -236,7 +207,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
                         <!-- <input type='text' class="form-control" id="gambar" name='gambar' value='<?= $data_barang['gambar'] ?>'> -->
                     </div>
                     <div class="modal-footer">
-                        <a href="../index.php?page=dataBarang" class="btn btn-danger">Batal</a>
+                        <a href="../../index.php?page=dataBarang" class="btn btn-danger">Batal</a>
                         <input type='submit' name='update' class="btn btn-primary" value='Update'>
                     </div>
                 </form>
@@ -247,7 +218,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script>
     $(document).ready(function(){
         // Show the modal on page load
