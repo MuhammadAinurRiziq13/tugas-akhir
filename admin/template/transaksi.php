@@ -10,7 +10,7 @@
     $barang = new Barang($conn);
 ?>
 <?php
-  require "DetailTransaksi.php";
+  require "classes/DetailTransaksi.php";
 ?>
     <main class="d-flex flex-nowrap">
     <?php
