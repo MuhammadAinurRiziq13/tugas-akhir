@@ -14,19 +14,21 @@
         // Ambil data dari form
         $namaBarang = $_POST['nama-barang'];
         $kategori = $_POST['kategori'];
+        $hargaBeli = $_POST['harga-beli'];
         $hargaJual = $_POST['harga-jual'];
+        $supplier = $_POST['supplier'];
         $stock = $_POST['stock'];
         $fotoBarang = $_FILES['foto-barang']['name'];
 
         // Lakukan validasi data jika diperlukan
 
         // Simpan foto ke direktori tertentu (misalnya 'uploads/')
-        $targetDir = "../uploads/";
+        $targetDir = "../../uploads/";
         $targetFile = $targetDir . basename($_FILES["foto-barang"]["name"]);
         move_uploaded_file($_FILES["foto-barang"]["tmp_name"], $targetFile);
 
         // Panggil method untuk menambahkan barang
-        if ($barang->tambahBarang($namaBarang, $kategori, $hargaJual, $stock, $fotoBarang)) {
+        if ($barang->tambahBarang($namaBarang, $kategori,$hargaBeli, $hargaJual,$supplier, $stock, $fotoBarang)) {
             // Redirect atau tampilkan pesan berhasil
             header("Location: ../../index.php?page=dataBarang");
             exit();

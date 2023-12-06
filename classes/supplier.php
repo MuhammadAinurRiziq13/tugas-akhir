@@ -89,5 +89,33 @@ class Supplier {
         }
     }
     
+    // public function getSupplierOptions(){
+    //     $options = '';
+
+    //     $query = "SELECT * FROM supplier ORDER BY nama_supplier ASC";
+    //     $result = $this->conn->query($query);
+
+    //     while ($row = $result->fetch_assoc()) {
+    //         $options .= '<option value="' . $row['id_supplier'] . '">' . $row['nama_supplier'] . '</option>';
+    //     }
+
+    //     return $options;
+    // }
+
+    public function getSupplier(){
+        $query = "SELECT * FROM supplier ORDER BY nama_supplier ASC";
+        $result = $this->conn->query($query);
+    
+        $options = array();
+        while ($row = $result->fetch_assoc()) {
+            $options[] = $row; // Menggunakan seluruh baris sebagai array asosiatif
+        }
+    
+        return $options;
+    }
+    
+
+    
+    
 }
 

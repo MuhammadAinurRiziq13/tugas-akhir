@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once '../../config/config.php'; 
-    require_once '../../classes/supplier.php'; 
+    require_once '../../classes/Supplier.php'; 
 
     $database = new Database();
     $conn = $database->conn;

@@ -2,12 +2,14 @@
     session_start();
     require_once '../../config/config.php'; 
     require_once '../../classes/Barang.php'; 
+    require_once '../../classes/supplier.php'; 
 
     $database = new Database();
     $conn = $database->conn;
 
     // Membuat instance dari class barang
     $barang = new Barang($conn);
+    $supplier = new Supplier($conn);
 
 if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
     $id_barang = $_GET['id'];
@@ -57,7 +59,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
         <div class="d-flex flex-column flex-shrink-0 p-3 bg-dongker menu" style="width: 240px; height: 100vh">
             <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none ms-4">
             <img src="../../assets/image/logo-dua.png" alt="logo" class="img-fluid ms-2" style="height: 40px" />
-            <!-- <span class="fs-5">KANTIN</span> -->
             </a>
             <hr class="text-white" />
             <ul class="nav nav-pills flex-column mb-auto">
@@ -149,31 +150,43 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
             <thead>
               <tr>
                 <th>No</th>
-                <th>image</th>
-                <th style="width: 41.5%">Name</th>
-                <th>Price</th>
+                <th>Gambar</th>
+                <th>Nama</th>
+                <th>Harga Beli</th>
+                <th>Harga Jual</th>
+                <th>Nama Supplier</th>
                 <th>Stock</th>
                 <th>Option</th>
               </tr>
             </thead>
             <tbody>
-              <?php
-                // Memanggil fungsi untuk mendapatkan data barang
-                $dataBarang = $barang->getDataBarang(); 
+            <?php
+                $dataSupplier = $supplier->getSupplier();
+                $dataBarang = $barang->getDataBarang();
+
                 $no = 1;
                 foreach ($dataBarang as $item) {
-                    echo "<tr>";
-                    echo "<td>" . $no++ . "</td>";
-                    echo "<td><img src='../uploads/" . $item['gambar'] . "' alt='' style='width: 4rem' class='rounded-3' /></td>";
-                    echo "<td>" . $item['nama_barang'] . "</td>";
-                    echo "<td>Rp. " . number_format($item['harga_barang']) . "</td>";
-                    echo "<td>" . $item['stok_barang'] . "</td>";
-                    echo "<td>
-                            <a href='classes/edit.php?action=edit&id=" . $item['id_barang'] . "' class='edit'>Edit</a>
-                            <a href='classes/delete.php?action=delete&id=" . $item['id_barang'] . "' class='hapus' onclick='return confirm(\"Hapus Data Jabatan ?\");'>Delete</a>
-                        </td>";
-                    echo "</tr>";                  
-                }                
+                  echo "<tr>";
+                  echo "<td>" . $no++ . "</td>";
+                  echo "<td><img src='../../uploads/" . $item['gambar'] . "' alt='' style='width: 4rem' class='rounded-3' /></td>";
+                  echo "<td>" . $item['nama_barang'] . "</td>";
+                  echo "<td>Rp. " . number_format($item['harga_beli']) . "</td>";
+                  echo "<td>Rp. " . number_format($item['harga_jual']) . "</td>";
+                  $supplierName = "";
+                  foreach ($dataSupplier as $supplier) {
+                      if ($supplier['id_supplier'] == $item['id_supplier']) {
+                          $supplierName = $supplier['nama_supplier'];
+                          break; 
+                      }
+                  }
+                  echo "<td>" . $supplierName . "</td>";
+                  echo "<td>" . $item['stok_barang'] . "</td>";
+                  echo "<td>
+                          <a href='admin/fungsi/editBarang.php?action=edit&id=" . $item['id_barang'] . "' class='edit'>Edit</a>
+                          <a href='admin/fungsi/deleteBarang.php?action=delete&id=" . $item['id_barang'] . "' class='hapus' onclick='return confirm(\"Hapus Data Barang ?\");'>Delete</a>
+                      </td>";
+                  echo "</tr>";                  
+                }             
               ?>
             </tbody>
           </table>
@@ -202,8 +215,22 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
                         </select>
                     </div>
                     <div class="mb-1">
-                        <label for="harga_barang" class="col-form-label">Harga Barang</label>
-                        <input type='text' class="form-control" id="harga_barang" name='harga_barang' value='<?= $data_barang['harga_barang'] ?>'>
+                      <label for="harga-beli" class="col-form-label">Harga Beli</label>
+                      <input type="text" class="form-control" id="harga-beli" name="harga-beli" value='<?= $data_barang['harga_beli'] ?>'/>
+                    </div>
+                    <div class="mb-1">
+                      <label for="harga-jual" class="col-form-label">Harga Jual</label>
+                      <input type="text" class="form-control" id="harga-jual" name="harga-jual" value='<?= $data_barang['harga_jual'] ?>'/>
+                    </div>
+                    <div class="mb-1">
+                      <label for="supplier" class="col-form-label">Supplier</label><br />
+                      <select id="supplier" name="supplier" class="px-2 py-1 rounded-2" style="width: 29rem">
+                          <?php foreach ($dataSupplier as $option): ?>
+                              <option value="<?= $option['id_supplier'] ?>" <?= ($option['id_supplier'] == $data_barang['id_supplier']) ? 'selected' : '' ?>>
+                                  <?= $option['nama_supplier'] ?>
+                              </option>
+                          <?php endforeach; ?>
+                      </select>
                     </div>
                     <div class="mb-1">
                         <label for="stok_barang" class="col-form-label">Stok Barang</label>
@@ -212,9 +239,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
                     <div class="mb-1">
                         <label for="gambar" class="col-form-label">Gambar</label>
                         <input type="file" class="form-control" id="foto-barang" name="foto_barang" accept="image/*" />
-                        <!-- <input type='text' class="form-control" id="gambar" name='gambar' value='<?= $data_barang['gambar'] ?>'> -->
                     </div>
-                    <div class="modal-footer">
+                    <div class="mb-1 d-flex justify-content-end mt-3 gap-2">
                         <a href="../../index.php?page=dataBarang" class="btn btn-danger">Batal</a>
                         <input type='submit' name='update' class="btn btn-primary" value='Update'>
                     </div>
@@ -223,6 +249,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit' && isset($_GET['id'])) {
           </div>
         </div>
       </div>
+
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

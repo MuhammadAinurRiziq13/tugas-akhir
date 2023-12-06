@@ -12,19 +12,21 @@
     // Memproses form jika ada data yang dikirim
     if (isset($_POST['update'])) {
         // Ambil data dari form
-        $id_barang = $_POST['id_barang'];
-        $nama_barang = $_POST['nama_barang'];
-        $id_kategori = $_POST['id_kategori'];
-        $harga_barang = $_POST['harga_barang'];
-        $stok_barang = $_POST['stok_barang'];
-        $gambar_barang = '';
+        $idBarang = $_POST['id_barang'];
+        $namaBarang = $_POST['nama_barang'];
+        $idKategori = $_POST['id_kategori'];
+        $hargaBeli = $_POST['harga-beli'];
+        $hargaJual = $_POST['harga-jual'];
+        $supplier = $_POST['supplier'];
+        $stokBarang = $_POST['stok_barang'];
+        $gambarBarang = '';
 
         // Cek apakah ada file yang di-upload
         if (isset($_FILES['foto_barang']) && $_FILES['foto_barang']['error'] == 0) {
             // Simpan foto ke direktori tertentu (misalnya 'uploads/')
-            $targetDir = "../uploads/";
-            $gambar_barang = basename($_FILES["foto_barang"]["name"]);
-            $targetFile = $targetDir . $gambar_barang;
+            $targetDir = "../../uploads/";
+            $gambarBarang = basename($_FILES["foto_barang"]["name"]);
+            $targetFile = $targetDir . $gambarBarang;
             
             if (move_uploaded_file($_FILES["foto_barang"]["tmp_name"], $targetFile)) {
                 // File berhasil di-upload
@@ -34,15 +36,15 @@
             }
         } else {
             // If no new photo uploaded, retain the existing photo
-            $existingData = $barang->getBarangById($id_barang);
-            $gambar_barang = $existingData['gambar'];
+            $existingData = $barang->getBarangById($idBarang);
+            $gambarBarang = $existingData['gambar'];
         }
 
         // Panggil method untuk memperbarui barang
-        $barang->updateBarang($id_barang, $nama_barang, $id_kategori, $harga_barang, $stok_barang, $gambar_barang);
+        $barang->updateBarang($idBarang, $namaBarang, $idKategori, $hargaBeli,$hargaJual,$supplier, $stokBarang, $gambarBarang);
 
         // Redirect atau tampilkan pesan berhasil
-        header("Location: ../index.php?page=dataBarang");
+        header("Location: ../../index.php?page=dataBarang");
         exit();
     } else {
         // Tampilkan pesan gagal

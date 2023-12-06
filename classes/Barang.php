@@ -7,18 +7,18 @@ class Barang {
         $this->conn = $conn;
     }
 
-    public function tambahBarang($nama, $kategori, $hargaJual, $stock, $foto) {
-        $sql = "INSERT INTO barang (nama_barang, id_kategori, harga_barang, stok_barang, gambar) VALUES (?, ?, ?, ?, ?)";
+    public function tambahBarang($nama, $kategori, $hargaBeli, $hargaJual, $supplier, $stock, $foto) {
+        $sql = "INSERT INTO barang (nama_barang, id_kategori, harga_beli, harga_jual, id_supplier, stok_barang, gambar) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("siiis", $nama, $kategori, $hargaJual, $stock, $foto);
-
+        $stmt->bind_param("siiiiis", $nama, $kategori, $hargaBeli, $hargaJual, $supplier, $stock, $foto);
+    
         // Eksekusi query
         if ($stmt->execute()) {
             return true; // Berhasil menambah barang
         } else {
             return false; // Gagal menambah barang
         }
-    }
+    }    
 
     public function getDataBarang() {
         // Ambil data barang dari database
@@ -57,14 +57,18 @@ class Barang {
         return $result->fetch_assoc();
     }
 
-    public function updateBarang($idBarang, $nama, $kategori, $hargaJual, $stock, $foto) {
+    public function updateBarang($idBarang, $nama, $kategori, $hargaBeli, $hargaJual, $supplier, $stock, $foto) {
         // Update data barang berdasarkan ID
-        $sql = "UPDATE barang SET nama_barang = ?, id_kategori = ?, harga_barang = ?, stok_barang = ?, gambar = ? WHERE id_barang = ?";
+        $sql = "UPDATE barang SET nama_barang = ?, id_kategori = ?, harga_beli = ?, harga_jual = ?, id_supplier = ?, stok_barang = ?, gambar = ? WHERE id_barang = ?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("siiisi", $nama, $kategori, $hargaJual, $stock, $foto, $idBarang);
-
+    
+        // Assuming id_kategori, harga_beli, harga_jual, and stok_barang are integers,
+        // and supplier is a string, adjust the data types accordingly
+        $stmt->bind_param("siiiiisi", $nama, $kategori, $hargaBeli, $hargaJual, $supplier, $stock, $foto, $idBarang);
+    
         return $stmt->execute();
     }
+    
 
     public function searchDataBarang($searchTerm) {
         // Saring data barang berdasarkan nama_barang
@@ -92,6 +96,19 @@ class Barang {
             return array();
         }
     }
+
+    public function getDataBarangByCategory($kategori) {
+        // Ambil data barang berdasarkan kategori
+        $sql = "SELECT * FROM barang WHERE id_kategori = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $kategori);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        // Mengembalikan hasil dalam bentuk array associative
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+    
 }
 
 ?>

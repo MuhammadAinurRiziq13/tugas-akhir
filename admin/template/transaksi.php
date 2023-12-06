@@ -24,13 +24,18 @@
               <h2 class="fw-bold ps-4 mb-3">Transaksi</h2>
               <div class="wrap-header d-flex justify-content-between align-items-center border-bot mx-4">
                 <ul class="list-grup gap-3 ps-0">
-                  <li class="list-item"><a href="#"><i class="fa-solid fa-border-all me-1"></i> All Items</a></li>
-                  <li class="list-item"><a href="#"><i class="fa-solid fa-utensils me-1"></i> Food</a></li>
-                  <li class="list-item"><a href="#"><i class="fa-solid fa-burger me-1"></i> Snack</a></li>
-                  <li class="list-item"><a href="#"><i class="fa-solid fa-wine-glass me-1"></i> Drink</a></li>
+                <li class="list-item"><a href="index.php?page=transaksi" ><i class="fa-solid fa-border-all me-1"></i> All Items</a></li>
+                <li class="list-item"><a href="index.php?page=transaksi&kategori=1" ><i class="fa-solid fa-utensils me-1"></i> Food</a></li>
+                <li class="list-item"><a href="index.php?page=transaksi&kategori=2" ><i class="fa-solid fa-wine-glass me-1"></i> Drink</a></li>
+                <li class="list-item"><a href="index.php?page=transaksi&kategori=3" ><i class="fa-solid fa-burger me-1"></i> Snack</a></li>
                 </ul>
                 <div class="grup pe-0">
-                  <input type="text" name="search" id="search" placeholder="search..." class="px-3 py-1 rounded-3 search " style="width: 13rem" />
+                  <form action="" method="post">
+                    <input type="text" name="search" id="search" placeholder="Search..." class="px-3 py-1 rounded-3 search" style="width: 13rem" />
+                    <button type="submit" class="me-3 rounded-3 px-3 py-1 cari-barang">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -53,18 +58,22 @@
                   // Jika ada data pencarian, panggil fungsi untuk mendapatkan data barang berdasarkan pencarian
                   $searchTerm = $_POST['search'];
                   $dataBarang = $barang->searchDataBarang($searchTerm);
+                } else if (isset($_GET['kategori'])) {
+                  // Jika ada parameter kategori
+                  $kategori = $_GET['kategori'];
+                  $dataBarang = $barang->getDataBarangByCategory($kategori);
                 } else {
-                  // Jika tidak ada data pencarian, panggil fungsi untuk mendapatkan semua data barang
+                  // Jika tidak ada data pencarian atau parameter kategori, tampilkan semua data barang
                   $dataBarang = $barang->getDataBarang();
                 }
 
                 $no = 1;
                 foreach ($dataBarang as $item) {
                   echo '<div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">';          
-                    echo '<img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />';
+                  echo '<img src="uploads/' . $item['gambar'] . '" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />';
                     echo '<div class="kartu-body pt-3 d-flex align-items-center flex-column">';
                       echo '<h5 class="kartu-title h6 fw-bold">'  . $item['nama_barang'] . '</h5>';
-                      echo '<p class="kartu-text mb-2 fs-6">' . number_format($item['harga_barang']) . '</p>';
+                      echo '<p class="kartu-text mb-2 fs-6">' . number_format($item['harga_jual']) . '</p>';
                       echo '<a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>';
                     echo '</div>
                   </div>';                

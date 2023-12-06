@@ -1,6 +1,6 @@
 <?php
     require_once '../../config/config.php'; // Pastikan file Database.php sudah di-include
-    require_once '../../classes/supplier.php';  // Pastikan file Item.php sudah di-include
+    require_once '../../classes/Supplier.php';  // Pastikan file Item.php sudah di-include
 
     // Membuat instance dari class Database
     $database = new Database();
