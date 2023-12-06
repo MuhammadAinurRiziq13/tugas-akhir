@@ -1,3 +1,15 @@
+<?php
+    require_once 'config/config.php'; // Pastikan file Database.php sudah di-include
+    require_once 'classes/Barang.php'; // Pastikan file Item.php sudah di-include
+
+    // Membuat instance dari class Database
+    $database = new Database();
+    $conn = $database->conn;
+
+    // Membuat instance dari class Item
+    $barang = new Barang($conn);
+?>
+    
     <main class="d-flex flex-nowrap">
     <?php
         include "sidebar.php";
@@ -24,7 +36,7 @@
                   <div class="card-body d-flex justify-content-between">
                     <div>
                       <h5 class="card-title">Jenis Barang</h5>
-                      <p class="card-text fw-bold my-4 fs-3">23</p>
+                      <p class="card-text fw-bold my-4 fs-3"><?= $barang->getJenisBarang(); ?></p>
                     </div>
                     <a href="index.php?page=jabatan" class="btn bg-dongker text-white" style="height: 35px; width: 40px"
                       ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-fill" viewBox="0 0 16 16">

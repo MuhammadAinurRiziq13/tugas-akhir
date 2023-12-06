@@ -109,6 +109,15 @@ class Barang {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
     
+    public function getJenisBarang() {
+        $query = "SELECT COUNT(*) as total_rows FROM barang";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+
+        return $row['total_rows'];
+    }
 }
 
 ?>
