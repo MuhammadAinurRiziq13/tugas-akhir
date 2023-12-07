@@ -1,3 +1,16 @@
+<?php
+    require_once 'config/config.php'; // Pastikan file Database.php sudah di-include
+    require_once 'classes/History.php'; // Pastikan file Item.php sudah di-include
+
+    // Membuat instance dari class Database
+    $database = new Database();
+    $conn = $database->conn;
+
+    // Membuat instance dari class Item
+    $history = new History($conn);
+    
+?>
+    
     <main class="d-flex flex-nowrap">
     <?php
         include "sidebar.php";
@@ -42,94 +55,30 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>01</td>
-                <td>2023-11-25 12:34:56</td>
-                <td>Nasi Goreng,Nasi Goreng,Nasi Goreng,&nbsp;...</td>
-                <td>Rp. 40.000</td>
-                <td>4</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>
-              </tr>
-              <tr>
-                <td>01</td>
-                <td>2023-11-25 12:34:56</td>
-                <td>Nasi Goreng,Nasi Goreng,Nasi Goreng,&nbsp;...</td>
-                <td>Rp. 40.000</td>
-                <td>4</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>
-              </tr>
-              <tr>
-                <td>01</td>
-                <td>2023-11-25 12:34:56</td>
-                <td>Nasi Goreng,Nasi Goreng,Nasi Goreng,&nbsp;...</td>
-                <td>Rp. 40.000</td>
-                <td>4</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>
-              </tr>
-              <tr>
-                <td>01</td>
-                <td>2023-11-25 12:34:56</td>
-                <td>Nasi Goreng,Nasi Goreng,Nasi Goreng,&nbsp;...</td>
-                <td>Rp. 40.000</td>
-                <td>4</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>
-              </tr>
-              <tr>
-                <td>01</td>
-                <td>2023-11-25 12:34:56</td>
-                <td>Nasi Goreng,Nasi Goreng,Nasi Goreng,&nbsp;...</td>
-                <td>Rp. 40.000</td>
-                <td>4</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>
-              </tr>
-              <tr>
-                <td>01</td>
-                <td>2023-11-25 12:34:56</td>
-                <td>Nasi Goreng,Nasi Goreng,Nasi Goreng,&nbsp;...</td>
-                <td>Rp. 40.000</td>
-                <td>4</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>
-              </tr>
-              <tr>
-                <td>01</td>
-                <td>2023-11-25 12:34:56</td>
-                <td>Nasi Goreng,Nasi Goreng,Nasi Goreng,&nbsp;...</td>
-                <td>Rp. 40.000</td>
-                <td>4</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>
-              </tr>
-              <tr>
-                <td>01</td>
-                <td>2023-11-25 12:34:56</td>
-                <td>Nasi Goreng,Nasi Goreng,Nasi Goreng,&nbsp;...</td>
-                <td>Rp. 40.000</td>
-                <td>4</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>
-              </tr>
-              <tr>
-                <td>01</td>
-                <td>2023-11-25 12:34:56</td>
-                <td>Nasi Goreng,Nasi Goreng,Nasi Goreng,&nbsp;...</td>
-                <td>Rp. 40.000</td>
-                <td>4</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>
-              </tr>
-              <tr>
-                <td>01</td>
-                <td>2023-11-25 12:34:56</td>
-                <td>Nasi Goreng,Nasi Goreng,Nasi Goreng,&nbsp;...</td>
-                <td>Rp. 40.000</td>
-                <td>4</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>
-              </tr>
-              <tr>
-                <td>01</td>
-                <td>2023-11-25 12:34:56</td>
-                <td>Nasi Goreng,Nasi Goreng,Nasi Goreng,&nbsp;...</td>
-                <td>Rp. 40.000</td>
-                <td>4</td>
-                <td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>
-              </tr>
+              <?php
+              // Memeriksa apakah ada data pencarian
+              if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
+                // Jika ada data pencarian, panggil fungsi untuk mendapatkan data barang berdasarkan pencarian
+                $searchTerm = $_POST['search'];
+                // $history = $history->searchHistory($searchTerm);
+                $history = $history->getHistory();
+              } else {
+                // Jika tidak ada data pencarian, panggil fungsi untuk mendapatkan semua data his$history
+                $history = $history->getHistory();
+              }
+
+              $no = 1;
+              foreach ($history as $item) {
+                echo "<tr>";
+                echo "<td>" . $no++ . "</td>";
+                echo "<td>". $item['tanggal_transaksi'] ."</td>";
+                echo "<td>" . $item['nama_barang'] . "</td>";
+                echo "<td>Rp. " . number_format($item['total_transaksi']) . "</td>";
+                echo "<td>" . $item['total_qty'] . "</td>";
+                echo '<td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>';
+                echo "</tr>";
+              }
+              ?>
             </tbody>
           </table>
         </div>
@@ -153,6 +102,11 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php
+                  echo "<tr>";
+                  echo "<td></td>";
+                  echo "</tr>";
+                  ?>
                   <tr>
                     <td>Nasgor Biasa</td>
                     <td>Rp. 10.000</td>
