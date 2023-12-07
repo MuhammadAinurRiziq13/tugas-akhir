@@ -8,7 +8,6 @@
 
     // Membuat instance dari class Item
     $history = new History($conn);
-    
 ?>
     
     <main class="d-flex flex-nowrap">
@@ -61,14 +60,14 @@
                 // Jika ada data pencarian, panggil fungsi untuk mendapatkan data barang berdasarkan pencarian
                 $searchTerm = $_POST['search'];
                 // $history = $history->searchHistory($searchTerm);
-                $history = $history->getHistory();
+                $historyArray = $history->getHistory();
               } else {
                 // Jika tidak ada data pencarian, panggil fungsi untuk mendapatkan semua data his$history
-                $history = $history->getHistory();
+                $historyArray = $history->getHistory();
               }
 
               $no = 1;
-              foreach ($history as $item) {
+              foreach ($historyArray as $item) {
                 echo "<tr>";
                 echo "<td>" . $no++ . "</td>";
                 echo "<td>". $item['tanggal_transaksi'] ."</td>";
@@ -103,31 +102,16 @@
                 </thead>
                 <tbody>
                   <?php
-                  echo "<tr>";
-                  echo "<td></td>";
-                  echo "</tr>";
+                  $historyDetail = $history->getDetailHistory(1);
+                  foreach ($historyDetail as $item) {
+                    echo "<tr>";
+                    echo "<td>" . $item['nama_barang'] . "</td>";
+                    echo "<td>Rp. " . number_format($item['harga_jual']) . "</td>";
+                    echo "<td>" . $item['qty'] . "</td>";
+                    echo "<td>Rp. " . $item['total'] ."</td>";
+                    echo "</tr>";
+                  }
                   ?>
-                  <tr>
-                    <td>Nasgor Biasa</td>
-                    <td>Rp. 10.000</td>
-                    <td>2</td>
-                    <td>Rp. 200.000</td>
-                  </tr>
-                    <td>Nasgor Biasa</td>
-                    <td>Rp. 10.000</td>
-                    <td>2</td>
-                    <td>Rp. 200.000</td>
-                  </tr>
-                    <td>Nasgor Biasa</td>
-                    <td>Rp. 10.000</td>
-                    <td>2</td>
-                    <td>Rp. 200.000</td>
-                  </tr>
-                    <td>Nasgor Biasa</td>
-                    <td>Rp. 10.000</td>
-                    <td>2</td>
-                    <td>Rp. 200.000</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
@@ -136,7 +120,7 @@
               <table>
                   <tr>
                     <td>Total Harga:</td>
-                    <td>Rp. 40.000</td>
+                    <td><?php echo $item['total_transaksi'];?></td>
                   </tr>
               </table>
             </div>
