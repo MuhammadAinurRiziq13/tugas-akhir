@@ -19,7 +19,7 @@ class History {
                     GROUP_CONCAT(' ', b.nama_barang)
             END AS nama_barang,
             t.total_transaksi,
-            SUM(dt.qty) AS total_qty,
+            SUM(dt.qty) AS total_qty
         FROM 
             transaksi t
         INNER JOIN detail_transaksi dt ON t.id_transaksi = dt.id_transaksi
