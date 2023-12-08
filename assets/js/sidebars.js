@@ -8,27 +8,6 @@
 })();
 
 document.addEventListener("DOMContentLoaded", function () {
-  const incrementDecrement = function (element) {
-    const inputElement = element.querySelector("input[name='quantity']");
-
-    element.querySelector(".plus-items").addEventListener("click", function () {
-      const currentValue = parseInt(inputElement.value) || 0;
-      if (currentValue < parseInt(inputElement.max)) {
-        inputElement.value = currentValue + 1;
-      }
-    });
-
-    element.querySelector(".min-items").addEventListener("click", function () {
-      const currentValue = Math.max((parseInt(inputElement.value) || 1) - 1, 1);
-      inputElement.value = currentValue;
-    });
-  };
-
-  // Apply incrementDecrement function to all elements with class 'list-items-order'
-  document.querySelectorAll(".list-items-order").forEach(function (element) {
-    incrementDecrement(element);
-  });
-
   // Ambil semua elemen <a> dengan class 'nav-link'
   var links = document.querySelectorAll(".nav-link");
 
@@ -64,9 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-    // Show the modal on page load
-    var editModal = document.getElementById('editModal');
-    if (editModal) {
-      editModal.style.display = 'block';
-    }
+  // Show the modal on page load
+  var editModal = document.getElementById("editModal");
+  if (editModal) {
+    editModal.style.display = "block";
+  }
 });

@@ -48,7 +48,7 @@
                 <th>Nama</th>
                 <th>Harga Beli</th>
                 <th>Harga Jual</th>
-                <th>Nama Supplier</th>
+                <th>Supplier</th>
                 <th>Stock</th>
                 <th>Option</th>
               </tr>

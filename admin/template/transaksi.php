@@ -41,17 +41,6 @@
             </div>
 
             <div class="card-container px-4 pt-2 d-flex flex-wrap gap-3 pb-4" >
-              <!-- Sebagai sample jika database barang kosong -->
-              <!-- <div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">
-                <img src="assets/image/nasgor.png" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />
-                <div class="kartu-body pt-3 d-flex align-items-center flex-column">
-                  <h5 class="kartu-title h6 fw-bold">Nasi Goreng</h5>
-                  <p class="kartu-text mb-2 fs-6">Rp. 10.000</p>
-                  <a href="#" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi">Add</a>
-                </div>
-              </div> -->
-                
-              <!-- Kode PHP -->
               <?php
                 // Memeriksa apakah ada data pencarian
                 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
@@ -81,6 +70,7 @@
               ?>
             </div>
           </div>
+          
           <!-- Baris di bawah adalah tempat di mana orderMenu.php akan diletakkan -->
           <div class="order-menu bg-white p-3 ms-0" style="width: 22%; height: 88%">
             <div class="header-order-menu border-bot">
@@ -90,7 +80,7 @@
             <div class="items pt-3" style="height: 72%">
               <h5 class="fw-bold mb-1">Items</h5>
                 <div class="items-wrap mb-0" style="height: 20rem">
-                  <div class="list-items-order d-flex border-bot py-2">
+                  <!-- <div class="list-items-order d-flex border-bot py-2">
                     <img src="assets/image/nasgor2.png" alt="order items" style="height: 3rem" />
                     <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
                       <p class="items-order-title fw-bold mb-1">Nasgor Biasa</p>
@@ -101,7 +91,7 @@
                       <input type="text" min="1" max="5" value="1" name="quantity" id="quantity" style="width: 2rem; font-size: 0.8rem" class="px-2" value="1"/>
                       <button type="button" class="plus-items">+</button>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
             </div>
             <div class="bayar-container border-top py-2 px-1 mt-2">
@@ -138,6 +128,7 @@
           </div>
         </div>
       </div>
+
       <div class="modal fade" id="strukModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
@@ -204,3 +195,6 @@
         </div>
       </div>
     </main>
+
+
+
