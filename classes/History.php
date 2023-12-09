@@ -12,11 +12,11 @@ class History {
             t.tanggal_transaksi, 
             t.id_transaksi,
             CASE
-                WHEN LENGTH(b.nama_barang) > 40 
+                WHEN LENGTH(GROUP_CONCAT(' ', b.nama_barang)) > 40 
                 THEN 
-                    GROUP_CONCAT(LEFT(b.nama_barang, 40), '...')
+                    CONCAT(LEFT(GROUP_CONCAT(' ', b.nama_barang), 40), ' ...')
                 ELSE 
-                    GROUP_CONCAT(' ', b.nama_barang)
+                    GROUP_CONCAT(' ',b.nama_barang)
             END AS nama_barang,
             t.total_transaksi,
             SUM(dt.qty) AS total_qty
@@ -25,7 +25,6 @@ class History {
         INNER JOIN detail_transaksi dt ON t.id_transaksi = dt.id_transaksi
         INNER JOIN barang b ON dt.id_barang = b.id_barang
         GROUP BY t.tanggal_transaksi, t.id_transaksi;
-    
         ";
         $result = $this->conn->query($sql);
 
@@ -40,6 +39,114 @@ class History {
             return array();
         }
     }
+
+    public function searchHistoryByMonth($month) {
+        $sql = "  
+        SELECT 
+            t.tanggal_transaksi, 
+            t.id_transaksi,
+            CASE
+                WHEN LENGTH(GROUP_CONCAT(' ', b.nama_barang)) > 40 
+                THEN 
+                    CONCAT(LEFT(GROUP_CONCAT(' ', b.nama_barang), 40), ' ...')
+                ELSE 
+                    GROUP_CONCAT(' ',b.nama_barang)
+            END AS nama_barang,
+            t.total_transaksi,
+            SUM(dt.qty) AS total_qty
+        FROM 
+            transaksi t
+        INNER JOIN detail_transaksi dt ON t.id_transaksi = dt.id_transaksi
+        INNER JOIN barang b ON dt.id_barang = b.id_barang
+        WHERE MONTH(tanggal_transaksi) = $month
+        GROUP BY t.tanggal_transaksi, t.id_transaksi;
+        ";
+        $result = $this->conn->query($sql);
+
+        // Cek jika ada data
+        if ($result->num_rows > 0) {
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            return $data;
+        } else {
+            return array();
+        }
+    }
+
+    public function searchHistoryByYear($year) {
+        $sql = "  
+        SELECT 
+            t.tanggal_transaksi, 
+            t.id_transaksi,
+            CASE
+                WHEN LENGTH(GROUP_CONCAT(' ', b.nama_barang)) > 40 
+                THEN 
+                    CONCAT(LEFT(GROUP_CONCAT(' ', b.nama_barang), 40), ' ...')
+                ELSE 
+                    GROUP_CONCAT(' ',b.nama_barang)
+            END AS nama_barang,
+            t.total_transaksi,
+            SUM(dt.qty) AS total_qty
+        FROM 
+            transaksi t
+        INNER JOIN detail_transaksi dt ON t.id_transaksi = dt.id_transaksi
+        INNER JOIN barang b ON dt.id_barang = b.id_barang
+        WHERE YEAR(tanggal_transaksi) = $year
+        GROUP BY t.tanggal_transaksi, t.id_transaksi;        
+        ";
+        $result = $this->conn->query($sql);
+
+        // Cek jika ada data
+        if ($result->num_rows > 0) {
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            return $data;
+        } else {
+            return array();
+        }
+    }
+
+    public function searchHistoryByMonthYear($month, $year) {
+        $sql = "  
+        SELECT 
+            t.tanggal_transaksi, 
+            t.id_transaksi,
+            CASE
+                WHEN LENGTH(GROUP_CONCAT(' ', b.nama_barang)) > 40 
+                THEN 
+                    CONCAT(LEFT(GROUP_CONCAT(' ', b.nama_barang), 40), ' ...')
+                ELSE 
+                    GROUP_CONCAT(' ',b.nama_barang)
+            END AS nama_barang,
+            t.total_transaksi,
+            SUM(dt.qty) AS total_qty
+        FROM 
+            transaksi t
+        INNER JOIN detail_transaksi dt ON t.id_transaksi = dt.id_transaksi
+        INNER JOIN barang b ON dt.id_barang = b.id_barang
+        WHERE MONTH(tanggal_transaksi) = $month AND YEAR(tanggal_transaksi) = $year
+        GROUP BY t.tanggal_transaksi, t.id_transaksi;  
+        ";
+        $result = $this->conn->query($sql);
+
+        // Cek jika ada data
+        if ($result->num_rows > 0) {
+            $data = array();
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+            return $data;
+        } else {
+            return array();
+        }
+    }
+
+
+
     public function getDetailHistory($idx){
         $sql="
             SELECT nama_barang, harga_jual, qty, (qty * harga_jual) as total, SUM(t.total_transaksi) AS total_transaksi
