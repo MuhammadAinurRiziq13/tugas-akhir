@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['bayar'])) {
             $_SESSION['last_transaction_id'] = $idTransaksi;
             $_SESSION['totalTunai'] = $uangBayar;
 
-            // Clear the shopping cart
+            //Clear the entire shopping cart
             $_SESSION["cart"] = array();
 
             header("Location: strukCart.php");

@@ -88,12 +88,7 @@
               <p class="date-menu">01/Sep/2023</p>
             </div>
             <div class="items pt-3" style="height: 72%">
-              <div class="title d-flex align-items-center justify-content-between">
-                <h5 class="fw-bold mb-1">Items</h5>
-                <form method="POST" action="admin/fungsi/deleteCart.php">
-                  <button type="submit" name="clear_cart" class="p-0 btn bg-dongker text-white" style="height: 1.5rem; width: 4rem; font-size: .8rem">Reset</button>
-                </form>
-              </div>
+              <h5 class="fw-bold mb-1">Items</h5>
               <div class="items-wrap mb-0" style="height: 20rem">
               <?php
                   $totalQuantity = 0;
