@@ -1,4 +1,4 @@
-<?php
+  <?php
     require_once 'config/config.php'; // Pastikan file Database.php sudah di-include
     require_once 'classes/Barang.php'; // Pastikan file Item.php sudah di-include
     require_once 'classes/Transaksi.php'; // Pastikan file Item.php sudah di-include
@@ -63,19 +63,31 @@
                   echo '<div class="kartu rounded-4 pt-2 bg-white d-flex align-items-center flex-column" style="width:18%">';
                   echo '<img src="uploads/' . $item['gambar'] . '" class="rounded-4 kartu-image" style="width: 7rem; height: 4rem" />';
                   echo '<div class="kartu-body pt-3 d-flex align-items-center flex-column">';
-                  echo '<h5 class="kartu-title h6 fw-bold">'  . $item['nama_barang'] . '</h5>';
+                  echo '<h5 class="kartu-title h6 fw-bold">' . $item['nama_barang'] . '</h5>';
                   echo '<p class="kartu-text mb-2 fs-6">' . number_format($item['harga_jual']) . '</p>';
                   echo '<form method="POST" action="admin/fungsi/addCart.php" class="add-to-cart-form">';
                   echo '<input type="hidden" name="id_barang" value="' . $item['id_barang'] . '">';
-                  echo '<div class="items-kuantiti d-flex align-items-end gap-1 ms-4">';
+                  echo '<div class="items-kuantiti d-flex align-items-end gap-1 justify-content-center">';
+              
+                  // Check if the stock is zero, and disable the input accordingly
+                  $disabled = $item['stok_barang'] == 0 ? 'disabled' : '';
+              
                   echo '<button type="button" class="min-items">-</button>';
-                  echo '<input type="text" min="1" max="5" value="1" name="quantity_' . $item['id_barang'] . '" class="quantity-input px-2" style="width: 2rem; font-size: 0.8rem" />';
+                  if ($item['stok_barang'] > 0) {
+                    echo '<input type="text" min="1" max="' . $item['stok_barang'] . '" value="1" name="quantity_' . $item['id_barang'] . '" class="quantity-input px-2" style="width: 2rem; font-size: 0.8rem" />';
+                  }else{
+                    echo '<input type="text" value="0" class="quantity-input px-2" style="width: 2rem; font-size: 0.8rem" />';
+                  }
                   echo '<button type="button" class="plus-items">+</button>';
                   echo '</div>';
-                  echo '<button type="submit" name="add_to_cart" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi mt-2" style="width:8rem">Add</button>';
+                  if ($item['stok_barang'] > 0) {
+                    echo '<button type="submit" name="add_to_cart" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi mt-2" style="width:8rem">Add</button>';
+                  }else {
+                    echo '<p class="p-0 pt-2 text-danger text-center">Stok Habis</p>';
+                  }
                   echo '</form>';
                   echo '</div> </div>';
-                }
+              }              
               
               ?>
             </div>
@@ -259,7 +271,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </main>
 
 

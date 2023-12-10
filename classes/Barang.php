@@ -118,6 +118,24 @@ class Barang {
 
         return $row['total_rows'];
     }
+
+    public function updateStock($idBarang, $quantity) {
+        // Fetch the current stock from the database
+        $query = "SELECT stok_barang FROM barang WHERE id_barang = $idBarang";
+        $result = $this->conn->query($query);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $currentStock = $row['stok_barang'];
+
+            // Calculate the new stock after the purchase
+            $newStock = $currentStock - $quantity;
+
+            // Update the stock in the database
+            $updateQuery = "UPDATE barang SET stok_barang = $newStock WHERE id_barang = $idBarang";
+            $this->conn->query($updateQuery);
+        }
+    }
 }
 
 ?>
