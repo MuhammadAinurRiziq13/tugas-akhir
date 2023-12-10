@@ -69,7 +69,7 @@
                   echo '<input type="hidden" name="id_barang" value="' . $item['id_barang'] . '">';
                   echo '<div class="items-kuantiti d-flex align-items-end gap-1 ms-4">';
                   echo '<button type="button" class="min-items">-</button>';
-                  echo '<input type="text" min="1" max="5" value="1" name="quantity_' . $item['id_barang'] . '" class="quantity-input px-2" style="width: 2rem; font-size: 0.8rem" />';
+                  echo '<input type="text" min="1" max="'.$item['stok_barang'] .'" value="1" name="quantity_' . $item['id_barang'] . '" class="quantity-input px-2" style="width: 2rem; font-size: 0.8rem" />';
                   echo '<button type="button" class="plus-items">+</button>';
                   echo '</div>';
                   echo '<button type="submit" name="add_to_cart" class="btn bg-dongker py-0 rounded-3 mb-2 text-white add-transaksi mt-2" style="width:8rem">Add</button>';
@@ -90,7 +90,6 @@
             <div class="items pt-3" style="height: 72%">
               <div class="title d-flex align-items-center justify-content-between">
                 <h5 class="fw-bold mb-1">Items</h5>
-                <!-- <button type="submit" name="delete-cart" class="remove-items btn bg-dongker p-0 text-white" style="height: 1.5rem; width: 4rem; font-size: .7rem">Reset</button> -->
                 <form method="POST" action="admin/fungsi/deleteCart.php">
                   <button type="submit" name="clear_cart" class="p-0 btn bg-dongker text-white" style="height: 1.5rem; width: 4rem; font-size: .8rem">Reset</button>
                 </form>
