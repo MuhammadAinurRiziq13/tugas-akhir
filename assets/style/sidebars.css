@@ -101,7 +101,7 @@ button.edit {
 a {
   text-decoration: none;
 }
-a.add-transaksi {
+button.add-transaksi {
   padding: 0 2.7rem;
 }
 .nav-utama {
