@@ -195,7 +195,7 @@
         </div>
       </div> -->
 
-      <div class="modal fade" id="strukModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+      <!-- <div class="modal fade" id="strukModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -259,7 +259,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </main>
 
 
