@@ -84,7 +84,7 @@
                 echo "<td>" . $item['nama_barang'] . "</td>";
                 echo "<td>Rp. " . number_format($item['total_transaksi']) . "</td>";
                 echo "<td>" . $item['total_qty'] . "</td>";
-                echo '<td><button type="button" class="edit" data-bs-toggle="modal" data-bs-target="#detailModal">Detail</button></td>';
+                echo "<td><a href='admin/fungsi/detailHistory.php?action=detail&id=" . $item['id_transaksi'] . "' class='edit'>Detail</a></td>";
                 echo "</tr>";
               }
               ?>
@@ -93,7 +93,7 @@
         </div>
       </div>
 
-      <div class="modal fade" id="detailModal" aria-hidden="true" aria-labelledby="exampleModalLabel" tabindex="-1">
+      <!-- <div class="modal fade" id="detailModal" aria-hidden="true" aria-labelledby="exampleModalLabel" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -139,5 +139,5 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </main>

@@ -11,9 +11,6 @@
     $barang = new Barang($conn);
     $transaksi = new Transaksi($conn);
 ?>
-<?php
-  require "classes/DetailTransaksi.php";
-?>
     <main class="d-flex flex-nowrap">
     <?php
         include "sidebar.php";

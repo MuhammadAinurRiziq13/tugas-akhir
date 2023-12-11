@@ -170,5 +170,27 @@ class History {
             return array();
         }
     }    
+
+    public function getDetailHistoryById($idTransaksi)
+    {
+        $sql = "SELECT dt.*, b.nama_barang, b.harga_jual, (dt.qty * b.harga_jual) as total_harga FROM detail_transaksi dt
+                INNER JOIN barang b ON dt.id_barang = b.id_barang
+                WHERE dt.id_transaksi = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $idTransaksi);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        $detailTransaksi = array();
+    
+        while ($row = $result->fetch_assoc()) {
+            $detailTransaksi[] = $row;
+        }
+    
+        return $detailTransaksi;
+    }
+    
+
+
 }
 ?>

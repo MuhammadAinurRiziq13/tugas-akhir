@@ -296,7 +296,7 @@ $kembalian = $totalTunai - $totalHarga;
                                 <td><?php echo $item['nama_barang']; ?></td>
                                 <td>Rp. <?php echo number_format($item['harga_jual']); ?></td>
                                 <td><?php echo $item['qty']; ?></td>
-                                <td>Rp. <?php echo number_format($item['harga_jual'] * $item['qty']); ?></td>
+                                <td>Rp. <?php echo number_format($item['total_harga']); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -321,7 +321,6 @@ $kembalian = $totalTunai - $totalHarga;
             </div>
 
             <div class="modal-footer">
-              <!-- <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> -->
               <a href="../../index.php?page=transaksi" class="btn btn-danger">Close</a>
             </div>
           </div>
