@@ -103,14 +103,16 @@
                 } elseif ($date != null){
                   $historyArray = $history->getHistoryByDate($date);
                 } else {
-                  $historyArray = array();
+                  $historyArray = $history->getHistory();
                 } 
               } else {
                 $historyArray = $history->getHistory();
               }
               
-              if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['filter1']) && $historyArray != array()) {
+              if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['filter1']) && $historyArray != $history->getHistory()) {
                 $no = 1;
+                $jumlahBeli = 0;
+                $jumlahJual = 0;
                 foreach ($historyArray as $item) {
                   echo "<tr>";
                   echo "<td>" . $no++ . "</td>";
@@ -119,8 +121,25 @@
                   echo "<td>Rp. ". number_format($item['harga_beli']) ."</td>";
                   echo "<td>Rp. ". number_format($item['harga_jual']) ."</td>";
                   echo "<td>". $item['total_qty'] . "</td>";
+                  echo "<td><a href='admin/fungsi/detailHistory.php?action=detail&id=" . $item['id_transaksi'] . "' class='edit'>Detail</a></td>";
                   echo "</tr>";
+                  $jumlahBeli += $item['harga_beli'];
+                  $jumlahJual += $item['harga_jual'];
                 }
+                echo "<tr>";
+                echo "<td></td>";
+                echo "<td></td>";
+                echo "<td>Total Penjualan : </td>";
+                echo "<td>Rp. ".number_format($jumlahBeli)."</td>";
+                echo "<td>Rp. ".number_format($jumlahJual)."</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td></td>";
+                echo "<td></td>";
+                echo "<td>Total Keuntungan : </td>";
+                echo "<td>Rp. ".number_format($jumlahJual - $jumlahBeli)."</td>";
+                echo "<td></td>";
+                echo "</tr>";
               } else {
                 $no = 1;
                 foreach ($historyArray as $item) {
