@@ -87,7 +87,7 @@
                 } elseif ($month == 13 && $years != 1) {
                     $historyArray = $history->searchHistoryByYear($years);
                 } else {
-                  $historyArray = array();
+                  $historyArray = $history->getHistory();
                 }
               }         
               
