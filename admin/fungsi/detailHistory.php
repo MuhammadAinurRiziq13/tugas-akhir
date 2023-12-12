@@ -126,30 +126,39 @@ if (isset($_GET['action']) && $_GET['action'] == 'detail' && isset($_GET['id']))
             <div class="header pb-2 pt-4 ms-4 me-5 mt-3 d-flex justify-content-between align-items-center border-bot">
                 <h2 class="fw-bold">History Penjualan</h2>
                 <div class="grup pe-0 mt-3">
-                <form action="" method="post">
-                <select id="bulan" name="bulan" class="px-3 py-1 rounded-3 pilih-bulan me-2" style="width: 10rem">
-                    <option value="13">ALL</option>
-                    <option value="1">Januari</option>
-                    <option value="2">Februari</option>
-                    <option value="3">Maret</option>
-                    <option value="4">April</option>
-                    <option value="5">Mei</option>
-                    <option value="6">Juni</option>
-                    <option value="7">Juli</option>
-                    <option value="8">Agustus</option>
-                    <option value="9">September</option>
-                    <option value="10">Oktober</option>
-                    <option value="11">November</option>
-                    <option value="12">Desember</option>
-                </select>
-                <select id="tahun" name="tahun" class="px-3 py-1 rounded-3 pilih-tahun" style="width: 10rem">
-                    <option value="1">ALL</option>
-                    <option value="2022">2022</option>
-                    <option value="2023">2023</option>
-                </select>
-                <button type="submit" name="search" class="btn btn-primary">Filter</button>
-                </form>
-                </div>
+            <form action="" method="post" class="mb-2">
+              <select id="supplier" name="supplier" class="px-3 py-1 rounded-3 pilih-bulan me-2" style="width: 10rem">
+              <option value="">Supplier</option>
+              </select>
+              <input type="date" name="date" id="date">
+              <button type="submit" name="filter1" class="btn btn-primary">Filter</button>
+            </form>
+              
+            <form action="" method="post">
+              <select id="bulan" name="bulan" class="px-3 py-1 rounded-3 pilih-bulan me-2" style="width: 10rem">
+                <option value="13">Bulan</option>
+                <option value="1">Januari</option>
+                <option value="2">Februari</option>
+                <option value="3">Maret</option>
+                <option value="4">April</option>
+                <option value="5">Mei</option>
+                <option value="6">Juni</option>
+                <option value="7">Juli</option>
+                <option value="8">Agustus</option>
+                <option value="9">September</option>
+                <option value="10">Oktober</option>
+                <option value="11">November</option>
+                <option value="12">Desember</option>
+              </select>
+              <select id="tahun" name="tahun" class="px-3 py-1 rounded-3 pilih-tahun" style="width: 10rem">
+                <option value="1">Tahun</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+              </select>
+              <button type="submit" name="filter2" class="btn btn-primary">Filter</button>
+            </form>
+            
+            </div>
             </div>
             <table class="ms-4 mt-2">
                 <thead>
