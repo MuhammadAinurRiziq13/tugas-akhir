@@ -30,7 +30,7 @@
                 <li class="list-item"><a href="index.php?page=dataBarang&kategori=3" ><i class="fa-solid fa-burger me-1"></i> Snack</a></li>
               </ul>
               <div class="grup pe-0 d-flex">
-                <button type="button" class="me-3 rounded-3 px-3 py-1 add-barang" data-bs-toggle="modal" data-bs-target="#addModal">Add Product</button>
+                <button type="button" class="me-3 rounded-3 px-3 py-1 add-barang" data-bs-toggle="modal" data-bs-target="#addModal"><i class="fa-solid fa-plus"></i> Add Product</button>
                 <form action="" method="post">
                     <input type="text" name="search" id="search" placeholder="Search..." class="px-3 py-1 rounded-3 search" style="width: 13rem" />
                     <button type="submit" class="me-3 rounded-3 px-3 py-1 cari-barang">

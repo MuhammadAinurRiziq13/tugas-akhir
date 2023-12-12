@@ -39,7 +39,8 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th style="width: 40%">Nama Supplier</th>
+                <th style="width: 20%">Nama Supplier</th>
+                <th style="width: 10%">Telepon</th>
                 <th style="width: 30.5%">Date</th>
                 <th>Option</th>
               </tr>
@@ -61,6 +62,7 @@
                     echo "<tr class='py-3' style='height: 3rem'>";
                     echo "<td>" . $no . "</td>";
                     echo "<td>" . $supplierData['nama_supplier'] . "</td>";
+                    echo "<td>" . $supplierData['telepon'] . "</td>";
                     echo "<td>" . $supplierData['tanggal_input'] . "</td>";
                     echo "<td>
                             <a href='admin/fungsi/editSupplier.php?action=edit&id=" . $supplierData['id_supplier'] . "' class='edit'>Edit</a>

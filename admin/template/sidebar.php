@@ -1,5 +1,5 @@
 <div class="d-flex flex-column flex-shrink-0 p-3 bg-dongker menu" style="width: 240px; height: 100vh">
-        <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none ms-4">
+        <a href="#" class="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none ms-4">
           <img src="assets/image/logo-dua.png" alt="logo" class="img-fluid ms-2" style="height: 40px" />
           <!-- <span class="fs-5">KANTIN</span> -->
         </a>
