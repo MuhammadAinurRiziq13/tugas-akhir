@@ -39,7 +39,7 @@
               
             <form action="" method="post">
               <select id="bulan" name="bulan" class="px-3 py-1 rounded-3 pilih-bulan me-2" style="width: 10rem">
-                <option value="13">ALL</option>
+                <option value="13">Bulan</option>
                 <option value="1">Januari</option>
                 <option value="2">Februari</option>
                 <option value="3">Maret</option>
@@ -54,7 +54,7 @@
                 <option value="12">Desember</option>
               </select>
               <select id="tahun" name="tahun" class="px-3 py-1 rounded-3 pilih-tahun" style="width: 10rem">
-                <option value="1">ALL</option>
+                <option value="1">Tahun</option>
                 <option value="2022">2022</option>
                 <option value="2023">2023</option>
               </select>
@@ -96,7 +96,7 @@
                 $date = $_POST['date'];
 
                 if ($date != null  && $id != "") {
-                  $historyArray = $history->getHistoryBySupplierDate($date, $supplier);
+                  $historyArray = $history->getHistoryBySupplierDate($date, $id);
                 } elseif ($id != "") { 
                   $historyArray = $history->getHistoryBySupplier($id);
                 } elseif ($date != null){
@@ -120,9 +120,9 @@
                   echo "</tr>";
                 }
               } else {
-                if ($historyArray == array()){
-                  $historyArray = $history->getHistory();
-                }
+                // if ($historyArray == array()){
+                  // $historyArray = $history->getHistory();
+                // }
                 $no = 1;
                 foreach ($historyArray as $item) {
                   echo "<tr>";

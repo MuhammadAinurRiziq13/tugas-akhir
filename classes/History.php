@@ -183,7 +183,7 @@ class History {
         INNER JOIN detail_transaksi dt ON t.id_transaksi = dt.id_transaksi
         INNER JOIN barang b ON dt.id_barang = b.id_barang
         INNER JOIN supplier s ON s.id_supplier = b.id_supplier
-        WHERE s.id_supplier = $idx AND t.tanggal_transaksi = $date
+        WHERE s.id_supplier = $idx AND DATE(t.tanggal_transaksi) = '$date'
         GROUP BY t.id_transaksi, t.tanggal_transaksi;
         ";
 
