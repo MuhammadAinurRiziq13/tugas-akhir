@@ -124,13 +124,15 @@
                         // Query ke database untuk mendapatkan informasi barang
                         $item = $barang->getBarangById($id_barang);
                         ?>
-                        <div class="list-items-order d-flex border-bot py-2">
-                          <img src="uploads/<?php echo $item['gambar']; ?>" alt="order items" style="height: 50px;width:70px;" />
-                          <div class="inner-items-order ms-1 d-flex flex-column justify-content-center">
-                              <p class="items-order-title fw-bold mb-1"><?php echo $item['nama_barang']; ?></p>
-                              <p class="items-order-harga mb-1">Rp. <?php echo number_format($item['harga_jual']); ?></p>
+                        <div class="list-items-order d-flex border-bot py-2 justify-content-between">
+                          <div class="d-flex py-2">
+                            <img src="uploads/<?php echo $item['gambar']; ?>" alt="order items" style="height: 50px;width:70px;" />
+                            <div class="inner-items-order ms-2 d-flex flex-column justify-content-center">
+                                <p class="items-order-title fw-bold mb-1"><?php echo $item['nama_barang']; ?></p>
+                                <p class="items-order-harga mb-1">Rp. <?php echo number_format($item['harga_jual']); ?></p>
+                            </div>
                           </div>
-                          <div class="items-kuantiti d-flex flex-column justify-content-between align-items-end gap-1 ms-4">
+                          <div class="items-kuantiti d-flex flex-column justify-content-between align-items-end gap-1 me-1" >
                               <form method="POST" action="admin/fungsi/deleteCart.php">
                                 <input type="hidden" name="id_barang" value="<?php echo $item['id_barang']; ?>">
                                 <button type="submit" name="remove_from_cart" class="remove-items btn btn-danger p-0" style="height: 1rem; width: 1rem; font-size: .6rem">x</button>
@@ -208,7 +210,7 @@
         </div>
       </div> -->
 
-      <div class="modal fade" id="strukModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+      <!-- <div class="modal fade" id="strukModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
