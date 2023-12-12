@@ -33,8 +33,8 @@
                 }        
                 ?>
               </select>
-              <input type="date" name="date" id="date">
-              <button type="submit" name="filter1" class="btn btn-primary">Filter</button>
+              <input type="date" name="date" id="date" class="date px-3 py-1 rounded-3" style="width: 10rem">
+              <button type="submit" name="filter1" class="mx-2 rounded-3 px-3 py-1 cari-barang"><i class="fa-solid fa-list"></i></button>
             </form>
               
             <form action="" method="post">
@@ -58,7 +58,7 @@
                 <option value="2022">2022</option>
                 <option value="2023">2023</option>
               </select>
-              <button type="submit" name="filter2" class="btn btn-primary">Filter</button>
+              <button type="submit" name="filter2" class="mx-2 rounded-3 px-3 py-1 cari-barang"><i class="fa-solid fa-list"></i></button>
             </form>
             
             </div>
@@ -68,9 +68,8 @@
               <tr>
                 <th>No</th>
                 <th>Date</th>
-                <th style="width: 30%">Nama Barang</th>
-                <th>Total Beli</th>
-                <th>Total Jual</th>
+                <th style="width: 39.5%">Nama Barang</th>
+                <th>Total Harga</th>
                 <th>Jumlah</th>
                 <th>Option</th>
               </tr>
@@ -116,9 +115,8 @@
                   echo "<td>" . $no++ . "</td>";
                   echo "<td>". $item['tanggal_transaksi'] ."</td>";
                   echo "<td>" . $item['nama_barang'] . "</td>";
-                  echo "<td>Rp. ". number_format($item['harga_jual']) ."</td>";
-                  echo "<td>Rp. ". number_format($item['harga_beli']) ."</td>";
                   echo "<td>". $item['total_qty'] . "</td>";
+                  echo "<td>". number_format($item['keuntungan']) ."</td>";
                   echo "</tr>";
                 }
               } else {
@@ -131,7 +129,6 @@
                   echo "<td>" . $no++ . "</td>";
                   echo "<td>". $item['tanggal_transaksi'] ."</td>";
                   echo "<td>" . $item['nama_barang'] . "</td>";
-                  echo "<td>Rp. " . number_format($item['total_beli']) . "</td>";
                   echo "<td>Rp. " . number_format($item['total_transaksi']) . "</td>";
                   echo "<td>" . $item['total_qty'] . "</td>";
                   echo "<td><a href='admin/fungsi/detailHistory.php?action=detail&id=" . $item['id_transaksi'] . "' class='edit'>Detail</a></td>";
