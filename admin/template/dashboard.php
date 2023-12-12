@@ -1,6 +1,7 @@
 <?php
     require_once 'config/config.php'; // Pastikan file Database.php sudah di-include
     require_once 'classes/Barang.php'; // Pastikan file Item.php sudah di-include
+    require_once 'classes/Transaksi.php'; // Pastikan file Item.php sudah di-include
 
     // Membuat instance dari class Database
     $database = new Database();
@@ -8,6 +9,7 @@
 
     // Membuat instance dari class Item
     $barang = new Barang($conn);
+    $transaksi = new Transaksi($conn);
 ?>
     
     <main class="d-flex flex-nowrap">
@@ -21,8 +23,6 @@
           <main class="col-md-9 col-lg-10 px-md-4 mx-4 mt-4" style="width: 100%">
             <div class="d-flex justify-content-between flex-wrap align-items-center pt-4 pb-2 me-5 mb-4 border-bot">
                 <?php
-                    require_once 'config/config.php';
-                    $database = new Database();
                     if ($_SESSION['level'] == 1) {
                         echo '<h1 class="h1 fw-bold">Welcome Pemilik</h1>';
                     } elseif ($_SESSION['level'] == 2) {
@@ -51,7 +51,7 @@
                   <div class="card-body d-flex justify-content-between">
                     <div>
                       <h5 class="card-title">Total Pembelian</h5>
-                      <p class="card-text fw-bold my-4 fs-3">23</p>
+                      <p class="card-text fw-bold my-4 fs-3"><?= $transaksi->getTotalTransaksi(); ?></p>
                     </div>
                     <a href="index.php?page=jabatan" class="btn bg-dongker text-white" style="height: 35px; width: 40px"
                       ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
@@ -69,7 +69,7 @@
                   <div class="card-body d-flex justify-content-between">
                     <div>
                       <h5 class="card-title">Total Pemasukan</h5>
-                      <p class="card-text fw-bold my-4 fs-3">Rp. 20.000.000</p>
+                      <p class="card-text fw-bold my-4 fs-3"><?= 'Rp. ' . number_format($transaksi->getTotalPemasukan()); ?></p>
                     </div>
                     <a href="index.php?page=jabatan" class="btn bg-dongker text-white" style="height: 35px; width: 40px"
                       ><i class="fa-solid fa-dollar-sign"></i>

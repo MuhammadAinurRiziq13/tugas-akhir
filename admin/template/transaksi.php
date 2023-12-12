@@ -99,9 +99,17 @@
             <div class="items pt-3" style="height: 72%">
               <div class="title d-flex align-items-center justify-content-between">
                 <h5 class="fw-bold mb-1">Items</h5>
+                <form method="POST" action="admin/fungsi/deleteCart.php">
+                  <button type="submit" name="clear_cart" class="btn bg-dongker text-white remove-items p-0" style="height: 1.5rem; width: 3rem; font-size: .7rem">Clear</button>
+                </form>
               </div>
               <div class="items-wrap mb-0" style="height: 20rem">
               <?php
+                  // Ensure $_SESSION["cart"] is initialized as an array
+                  if (!isset($_SESSION["cart"]) || !is_array($_SESSION["cart"])) {
+                    $_SESSION["cart"] = array();
+                  }
+                  
                   $totalQuantity = 0;
 
                   // Calculate total price using the function

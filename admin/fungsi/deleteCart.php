@@ -29,11 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove_from_cart'])) 
     header("Location: ../../index.php?page=transaksi");
     exit();
 
-} 
-// else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['clear_cart'])) {
-//     // Clear the entire shopping cart
-//     $_SESSION["cart"] = array();
+} else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['clear_cart'])) {
+    // Clear the entire shopping cart
+    $_SESSION["cart"] = array();
     
-//     header("Location: ../../index.php?page=transaksi");
-//     exit();
-// }
+    header("Location: ../../index.php?page=transaksi");
+    exit();
+}

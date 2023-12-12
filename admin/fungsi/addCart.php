@@ -14,11 +14,6 @@ $transaksi = new Transaksi($conn);
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     $id_barang_to_add = $_POST['id_barang'];
 
-    // Ensure $_SESSION["cart"] is initialized as an array
-    if (!isset($_SESSION["cart"]) || !is_array($_SESSION["cart"])) {
-        $_SESSION["cart"] = array();
-    }
-
     // Check if the item is already in the cart
     $item_exists_in_cart = false;
     foreach ($_SESSION["cart"] as $cartItem) {

@@ -98,6 +98,26 @@ class Transaksi {
 
         return $row['total_transaksi'];
     }
+
+    public function getTotalTransaksi() {
+        $query = "SELECT COUNT(*) as total_rows FROM transaksi";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+
+        return $row['total_rows'];
+    }
+
+    public function getTotalPemasukan() {
+        $query = "SELECT SUM(total_transaksi) as total_rows FROM transaksi";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+
+        return $row['total_rows'];
+    }
     
 }
 ?>
