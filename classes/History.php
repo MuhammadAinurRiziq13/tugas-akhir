@@ -19,6 +19,7 @@ class History {
                     GROUP_CONCAT(' ',b.nama_barang)
             END AS nama_barang,
             t.total_transaksi,
+            SUM(qty * harga_beli) AS total_beli,
             SUM(dt.qty) AS total_qty
         FROM 
             transaksi t
@@ -53,6 +54,7 @@ class History {
                     GROUP_CONCAT(' ',b.nama_barang)
             END AS nama_barang,
             t.total_transaksi,
+            SUM(qty * harga_beli) AS total_beli,
             SUM(dt.qty) AS total_qty
         FROM 
             transaksi t
@@ -88,6 +90,7 @@ class History {
                     GROUP_CONCAT(' ',b.nama_barang)
             END AS nama_barang,
             t.total_transaksi,
+            SUM(qty * harga_beli) AS total_beli,
             SUM(dt.qty) AS total_qty
         FROM 
             transaksi t
@@ -123,6 +126,7 @@ class History {
                     GROUP_CONCAT(' ',b.nama_barang)
             END AS nama_barang,
             t.total_transaksi,
+            SUM(qty * harga_beli) AS total_beli,
             SUM(dt.qty) AS total_qty
         FROM 
             transaksi t
@@ -176,7 +180,8 @@ class History {
                 ELSE 
                     GROUP_CONCAT(' ',b.nama_barang)
             END AS nama_barang,
-            SUM((dt.qty * b.harga_jual)-(dt.qty * b.harga_beli)) AS keuntungan,
+            SUM(qty * b.harga_jual) AS harga_jual,
+            SUM(qty * b.harga_beli) AS harga_beli,
             SUM(dt.qty) AS total_qty
         FROM 
             transaksi t
@@ -213,7 +218,8 @@ class History {
                 ELSE 
                     GROUP_CONCAT(' ',b.nama_barang)
             END AS nama_barang,
-            SUM((dt.qty * b.harga_jual)-(dt.qty * b.harga_beli)) AS keuntungan,
+            SUM(qty * b.harga_jual) AS harga_jual,
+            SUM(qty * b.harga_beli) AS harga_beli,
             SUM(dt.qty) AS total_qty
         FROM 
             transaksi t
@@ -250,7 +256,8 @@ class History {
                 ELSE 
                     GROUP_CONCAT(' ',b.nama_barang)
             END AS nama_barang,
-            SUM((dt.qty * b.harga_jual)-(dt.qty * b.harga_beli)) AS keuntungan,
+            SUM(qty * b.harga_jual) AS harga_jual,
+            SUM(qty * b.harga_beli) AS harga_beli,
             SUM(dt.qty) AS total_qty
         FROM 
             transaksi t

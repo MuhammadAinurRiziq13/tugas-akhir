@@ -68,8 +68,9 @@
               <tr>
                 <th>No</th>
                 <th>Date</th>
-                <th style="width: 39.5%">Nama Barang</th>
-                <th>Total Harga</th>
+                <th style="width: 30%">Nama Barang</th>
+                <th>Total Beli</th>
+                <th>Total Jual</th>
                 <th>Jumlah</th>
                 <th>Option</th>
               </tr>
@@ -115,8 +116,9 @@
                   echo "<td>" . $no++ . "</td>";
                   echo "<td>". $item['tanggal_transaksi'] ."</td>";
                   echo "<td>" . $item['nama_barang'] . "</td>";
+                  echo "<td>Rp. ". number_format($item['harga_jual']) ."</td>";
+                  echo "<td>Rp. ". number_format($item['harga_beli']) ."</td>";
                   echo "<td>". $item['total_qty'] . "</td>";
-                  echo "<td>". number_format($item['keuntungan']) ."</td>";
                   echo "</tr>";
                 }
               } else {
@@ -129,6 +131,7 @@
                   echo "<td>" . $no++ . "</td>";
                   echo "<td>". $item['tanggal_transaksi'] ."</td>";
                   echo "<td>" . $item['nama_barang'] . "</td>";
+                  echo "<td>Rp. " . number_format($item['total_beli']) . "</td>";
                   echo "<td>Rp. " . number_format($item['total_transaksi']) . "</td>";
                   echo "<td>" . $item['total_qty'] . "</td>";
                   echo "<td><a href='admin/fungsi/detailHistory.php?action=detail&id=" . $item['id_transaksi'] . "' class='edit'>Detail</a></td>";
